@@ -1,0 +1,259 @@
+.contact-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-light);
+  /* Visual separation background */
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eaeaea;
+}
+
+.contact-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.contact-text {
+  padding-top: 2rem;
+}
+
+.contact-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--color-primary-navy);
+}
+
+.contact-text p {
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.text-separator {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, #eaeaea, transparent);
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item strong {
+  color: var(--color-primary-navy);
+  font-size: 1rem;
+}
+
+.info-item span {
+  color: var(--color-primary-blue);
+  font-weight: 500;
+}
+
+.social-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.social-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.social-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.social-card strong {
+  color: var(--color-primary-navy);
+  font-size: 1rem;
+}
+
+.social-card span {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.social-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Optional subtle branding colors on hover */
+.social-card.facebook:hover {
+  border-color: #1877F2;
+}
+
+.social-card.instagram:hover {
+  border-color: transparent;
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) border-box;
+}
+
+.social-card.tiktok:hover {
+  border-color: #000000;
+}
+
+.contact-form-wrapper {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(10, 25, 47, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary-navy);
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 200ms ease-out;
+  background-color: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-blue);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: #e53935;
+  background-color: #ffebee;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--color-primary-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.submit-button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.submit-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideDown 300ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
