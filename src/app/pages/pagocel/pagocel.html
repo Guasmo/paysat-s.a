@@ -1,0 +1,403 @@
+<!-- ==============================================
+   HERO - Split layout: texto izquierda, telefono derecha
+   + 4 cards flotantes que EXPLOTAN desde el centro
+=============================================== -->
+<section class="pgc-hero" aria-label="Introduccion a PAGOCEL">
+
+  <!-- Cards flotantes IZQUIERDA -->
+
+  <!-- Top-left: Pago Procesado con check -->
+  <div class="pgc-float pgc-float--tl" aria-hidden="true">
+    <div class="pgc-fcard">
+      <div class="pgc-fcard-row">
+        <span class="pgc-fcard-icon pgc-fcard-icon--teal">
+          <svg viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" />
+            <path d="M6 9l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span class="pgc-fcard-label">Transferencia</span>
+        <span class="pgc-fcard-badge pgc-fcard-badge--ok">Exitosa</span>
+      </div>
+      <p class="pgc-fcard-amount">$25.00</p>
+      <p class="pgc-fcard-sub">A: Cooperativa Coopmego</p>
+    </div>
+  </div>
+
+  <!-- Bottom-left: Barras QR -->
+  <div class="pgc-float pgc-float--bl" aria-hidden="true">
+    <div class="pgc-fcard">
+      <div class="pgc-fcard-row">
+        <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+          <svg viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4" />
+            <rect x="10" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4" />
+            <rect x="2" y="10" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4" />
+            <rect x="12" y="12" width="2" height="2" fill="currentColor" />
+            <rect x="10" y="10" width="2" height="2" fill="currentColor" />
+          </svg>
+        </span>
+        <span class="pgc-fcard-label">Pago QR</span>
+      </div>
+      <div class="pgc-fcard-bars" aria-hidden="true">
+        <span style="--h:55%"></span>
+        <span style="--h:38%"></span>
+        <span style="--h:72%"></span>
+        <span style="--h:45%"></span>
+        <span style="--h:80%"></span>
+        <span style="--h:60%"></span>
+      </div>
+      <p class="pgc-fcard-sub">Recibe - Cobra - Escanea</p>
+    </div>
+  </div>
+
+  <!-- Cards flotantes DERECHA -->
+
+  <!-- Top-right: QR Dinamico con monto -->
+  <div class="pgc-float pgc-float--tr" aria-hidden="true">
+    <div class="pgc-fcard">
+      <div class="pgc-fcard-row">
+        <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+          <svg viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" />
+            <path d="M9 6v6M6 9h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="pgc-fcard-label">QR para cobros</span>
+      </div>
+      <p class="pgc-fcard-amount pgc-fcard-amount--amber">$150.00</p>
+      <p class="pgc-fcard-sub">Monto fijo - Banco del Austro</p>
+    </div>
+  </div>
+
+  <!-- Bottom-right: Stats del dia -->
+  <div class="pgc-float pgc-float--br" aria-hidden="true">
+    <div class="pgc-fcard">
+      <div class="pgc-fcard-row">
+        <span class="pgc-fcard-icon pgc-fcard-icon--teal">
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M3 13l3-4 4 2 5-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span class="pgc-fcard-label">Transacciones hoy</span>
+      </div>
+      <div class="pgc-fcard-2col">
+        <div class="pgc-fcard-stat">
+          <span class="pgc-fcard-val">1,248</span>
+          <span class="pgc-fcard-sub">Operaciones</span>
+        </div>
+        <div class="pgc-fcard-stat">
+          <span class="pgc-fcard-val">$94k</span>
+          <span class="pgc-fcard-sub">Volumen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido central: texto izquierda / telefono derecha -->
+  <div class="pgc-hero-inner">
+
+    <div class="pgc-hero-text">
+      <h1 class="pgc-hero-h1">
+        Tu n&uacute;mero<br>de celular<br>
+        <span class="pgc-hero-accent">es tu cuenta.</span>
+      </h1>
+      <p class="pgc-hero-sub">
+        Transfiere, cobra con QR y conecta tu instituci&oacute;n al sistema financiero
+        desde una sola plataforma. Sin fricci&oacute;n, sin papel, en segundos.
+      </p>
+      <div class="pgc-hero-actions">
+        <a routerLink="/abre-tu-cuenta" class="pgc-btn-primary" id="pagocel-demo-cta">
+          Solicitar demo
+          <span class="pgc-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a routerLink="/soluciones" class="pgc-btn-ghost">Ver soluciones</a>
+      </div>
+      <div class="pgc-trust-strip" aria-label="Caracteristicas clave">
+        <span>Transferencias instant&aacute;neas</span>
+        <span aria-hidden="true">-</span>
+        <span>QR est&aacute;tico y din&aacute;mico</span>
+        <span aria-hidden="true">-</span>
+        <span>Core Bancario integrado</span>
+      </div>
+    </div>
+
+    <!-- Telefono derecha -->
+    <div class="pgc-hero-visual" aria-hidden="true">
+      <div class="pgc-phone-shell">
+        <div class="pgc-phone-bezel">
+          <img src="mockup-7.png" alt="Pantalla principal de PAGOCEL mostrando pago movil" class="pgc-hero-phone"
+            width="300" height="600" />
+        </div>
+      </div>
+      <!-- Badge flotante sobre el telefono -->
+      <div class="pgc-phone-badge pgc-phone-badge--top">
+        <svg viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="6" fill="#4ade80" opacity="0.2" />
+          <circle cx="7" cy="7" r="3" fill="#4ade80" />
+        </svg>
+        Pago confirmado
+      </div>
+      <div class="pgc-phone-badge pgc-phone-badge--bot">
+        <svg viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Interbancario
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==============================================
+   TIMELINE SECTIONS
+=============================================== -->
+<div class="pgc-timeline" role="list">
+
+  <!-- 01 - Transferencias -->
+  <section class="pgc-section pgc-tl-section" role="listitem" aria-labelledby="sec-transfer-heading">
+    <div class="pgc-tl-node" aria-hidden="true">
+    </div>
+    <div class="pgc-sec-inner">
+
+      <div class="pgc-sec-info">
+        <div class="pgc-sec-header">
+          <h2 id="sec-transfer-heading">Paga a cualquier n&uacute;mero,<br>desde cualquier banco.</h2>
+          <p>
+            El n&uacute;mero de celular es la &uacute;nica direcci&oacute;n que necesitas.
+            Ingresa el monto, selecciona el banco origen y confirma:
+            el dinero llega en segundos a cualquier instituci&oacute;n.
+          </p>
+        </div>
+
+        <div class="pgc-feat-list">
+          <div class="pgc-feat-item">
+            <div class="pgc-feat-bar" aria-hidden="true"></div>
+            <div>
+              <h3>Interbancario en tiempo real</h3>
+              <p>Transferencias entre bancos, cooperativas y mutualistas sin tiempos de espera ni intermediarios
+                visibles.</p>
+            </div>
+          </div>
+          <div class="pgc-feat-item">
+            <div class="pgc-feat-bar" aria-hidden="true"></div>
+            <div>
+              <h3>Selecci&oacute;n de cuenta origen</h3>
+              <p>El usuario elige desde qu&eacute; instituci&oacute;n debita en cada transacci&oacute;n. Control total
+                sin cambiar de app.</p>
+            </div>
+          </div>
+          <div class="pgc-feat-item">
+            <div class="pgc-feat-bar" aria-hidden="true"></div>
+            <div>
+              <h3>Notificaci&oacute;n al instante</h3>
+              <p>Push, SMS o correo se disparan autom&aacute;ticamente al emisor y al receptor en cada movimiento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pgc-sec-visual">
+        <div class="pgc-sec-phone-wrap" aria-hidden="true">
+          <!-- Badge sobre el telefono -->
+          <div class="pgc-sec-badge pgc-sec-badge--teal">
+            <svg viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2" />
+              <path d="M4 7l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Pago procesado
+          </div>
+          <div class="pgc-sec-badge pgc-sec-badge--amber pgc-sec-badge--br">
+            <svg viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              <path d="M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Interbancario
+          </div>
+
+          <div class="pgc-sec-float pgc-sec-float--01">
+            <div class="pgc-fcard">
+              <div class="pgc-fcard-row">
+                <span class="pgc-fcard-icon pgc-fcard-icon--teal">
+                  <svg viewBox="0 0 18 18" fill="none">
+                    <path d="M3 9h12M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <span class="pgc-fcard-label">Tiempo de proceso</span>
+              </div>
+              <p class="pgc-fcard-amount">&lt;3s</p>
+              <p class="pgc-fcard-sub">Interbancario en tiempo real</p>
+            </div>
+          </div>
+
+          <img src="mockup-8.png" alt="Confirmacion de pago movil interbancario en PAGOCEL" class="pgc-sec-phone"
+            width="260" height="520" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 - QR -->
+  <section class="pgc-section pgc-section--alt pgc-tl-section" role="listitem" aria-labelledby="sec-qr-heading">
+    <div class="pgc-tl-node" aria-hidden="true">
+    </div>
+    <div class="pgc-sec-inner pgc-sec-inner--rev">
+
+      <div class="pgc-sec-visual">
+        <!-- Telefono -->
+        <div class="pgc-sec-phone-wrap" aria-hidden="true">
+          <div class="pgc-sec-badge pgc-sec-badge--amber">
+            <svg viewBox="0 0 14 14" fill="none">
+              <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+              <rect x="7" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+              <rect x="2" y="7" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2" />
+              <rect x="9" y="9" width="2" height="2" fill="currentColor" />
+            </svg>
+            Escanear QR
+          </div>
+
+          <div class="pgc-sec-float pgc-sec-float--02">
+            <div class="pgc-fcard">
+              <div class="pgc-fcard-row">
+                <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+                  <svg viewBox="0 0 18 18" fill="none">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" />
+                  </svg>
+                </span>
+                <span class="pgc-fcard-label">QR con monto de:</span>
+              </div>
+              <p class="pgc-fcard-amount pgc-fcard-amount--amber">$25.50</p>
+              <p class="pgc-fcard-sub">Estatico + dinamico</p>
+            </div>
+          </div>
+
+          <img src="mockup-5.png" alt="Escaner QR de PAGOCEL" class="pgc-sec-phone" width="240" height="480" />
+        </div>
+      </div>
+
+      <div class="pgc-sec-info">
+        <div class="pgc-sec-header">
+          <h2 id="sec-qr-heading">QR que se adapta<br>a tu operaci&oacute;n.</h2>
+          <p>Dos modalidades en una sola plataforma, pensadas para cada tipo de cobro.</p>
+        </div>
+
+        <!-- Bento QR -->
+        <div class="pgc-qr-bento" role="list" aria-label="Tipos de QR">
+          <article class="pgc-bento-cell" role="listitem">
+            <div class="pgc-bento-pill">QR Est&aacute;tico</div>
+            <h3>C&oacute;digo permanente para cobrar siempre.</h3>
+            <p>El pagador ingresa el monto. Ideal para negocios y puntos de cobro fijos.</p>
+            <div class="pgc-bento-qr-vis" aria-hidden="true">
+              <svg viewBox="0 0 60 60" fill="none">
+                <rect x="3" y="3" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5" />
+                <rect x="7" y="7" width="14" height="14" rx="1" fill="currentColor" fill-opacity="0.18" />
+                <rect x="35" y="3" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5" />
+                <rect x="39" y="7" width="14" height="14" rx="1" fill="currentColor" fill-opacity="0.18" />
+                <rect x="3" y="35" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5" />
+                <rect x="7" y="39" width="14" height="14" rx="1" fill="currentColor" fill-opacity="0.18" />
+                <rect x="35" y="35" width="7" height="7" fill="currentColor" fill-opacity="0.35" />
+                <rect x="48" y="35" width="7" height="7" fill="currentColor" fill-opacity="0.2" />
+                <rect x="35" y="48" width="7" height="7" fill="currentColor" fill-opacity="0.2" />
+                <rect x="48" y="48" width="7" height="7" fill="currentColor" fill-opacity="0.35" />
+              </svg>
+            </div>
+          </article>
+          <article class="pgc-bento-cell pgc-bento-cell--amber" role="listitem">
+            <div class="pgc-bento-pill pgc-bento-pill--amber">QR Din&aacute;mico</div>
+            <h3>Genera un QR con monto fijo.</h3>
+            <p>El cliente solo escanea y confirma. Sin errores, sin cambio.</p>
+            <div class="pgc-bento-amount" aria-hidden="true">
+              <span class="pgc-ba-sym">$</span>
+              <span class="pgc-ba-val">150</span>
+              <span class="pgc-ba-cents">.00</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 03 - Core Bancario -->
+  <section class="pgc-section pgc-tl-section" role="listitem" aria-labelledby="sec-core-heading">
+    <div class="pgc-tl-node" aria-hidden="true">
+    </div>
+    <div class="pgc-sec-inner">
+
+      <div class="pgc-sec-info">
+        <div class="pgc-sec-header">
+          <h2 id="sec-core-heading">Conectado al sistema<br>financiero ecuatoriano.</h2>
+          <p>
+            PAGOCEL se integra al core bancario de tu instituci&oacute;n via API REST certificada,
+            habilitando la interoperabilidad completa del sector financiero.
+          </p>
+        </div>
+
+        <dl class="pgc-core-dl">
+          <div class="pgc-core-item">
+            <dt>API REST bidireccional</dt>
+            <dd>Comunicaci&oacute;n directa con el core: consultas, d&eacute;bitos, cr&eacute;ditos y confirmaciones en
+              tiempo real.</dd>
+          </div>
+          <div class="pgc-core-item">
+            <dt>Soporte multi-instituci&oacute;n</dt>
+            <dd>El usuario vincula cuentas de distintas entidades y elige el origen en cada operaci&oacute;n.</dd>
+          </div>
+          <div class="pgc-core-item">
+            <dt>Conciliaci&oacute;n autom&aacute;tica</dt>
+            <dd>Cruce de transacciones sin intervenci&oacute;n manual. Reportes CSV, PDF y Excel por rango de fechas.
+            </dd>
+          </div>
+          <div class="pgc-core-item">
+            <dt>Reportes y alertas</dt>
+            <dd>Dashboard operacional en tiempo real, alertas configurables y trazabilidad completa.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="pgc-sec-visual">
+        <div class="pgc-sec-phone-wrap" aria-hidden="true">
+          <div class="pgc-sec-badge pgc-sec-badge--teal pgc-sec-badge--br">
+            <svg viewBox="0 0 14 14" fill="none">
+              <rect x="2" y="5" width="10" height="7" rx="1" stroke="currentColor" stroke-width="1.2" />
+              <path d="M5 5V4a2 2 0 114 0v1" stroke="currentColor" stroke-width="1.2" />
+            </svg>
+            API Segura
+          </div>
+
+          <div class="pgc-sec-float pgc-sec-float--01">
+            <div class="pgc-fcard">
+              <div class="pgc-fcard-row">
+                <span class="pgc-fcard-icon pgc-fcard-icon--teal">
+                  <svg viewBox="0 0 18 18" fill="none">
+                    <rect x="2" y="5" width="10" height="7" rx="1" stroke="currentColor" stroke-width="1.2" />
+                  </svg>
+                </span>
+                <span class="pgc-fcard-label">Instituciones conectadas</span>
+              </div>
+              <p class="pgc-fcard-sub">Bancos y cooperativas</p>
+            </div>
+          </div>
+
+          <img src="mockup-9.png" alt="Integracion core bancario en PAGOCEL" class="pgc-sec-phone" width="260"
+            height="520" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /pgc-timeline -->
+<app-contact></app-contact>
