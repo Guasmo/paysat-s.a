@@ -1,0 +1,120 @@
+.privacy-page {
+  padding: 4rem 2rem;
+  background-color: var(--color-bg-light, #f8fafc);
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
+.privacy-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.privacy-sidebar {
+  display: block;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 100px; /* Offset to stay below header */
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--color-border, #e2e8f0);
+}
+
+.sticky-nav a {
+  padding: 0.8rem 1.5rem;
+  color: var(--color-text-muted, #64748b);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  left: -2px;
+  border-left: 2px solid transparent;
+}
+
+.sticky-nav a:hover,
+.sticky-nav a:focus {
+  color: var(--color-primary-navy, #0A192F);
+  border-left-color: var(--color-primary-navy, #0A192F);
+  background-color: rgba(0,0,0,0.02);
+}
+
+.privacy-content {
+  background-color: var(--color-white, #ffffff);
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-content h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary-navy, #0A192F);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border, #e2e8f0);
+}
+
+.privacy-content section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 100px; /* Gives space when anchoring */
+}
+
+.privacy-content h2 {
+  font-size: 1.3rem;
+  color: var(--color-primary-navy, #0A192F);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.privacy-content p, 
+.privacy-content li {
+  font-size: 1.05rem;
+  color: var(--color-text-main, #334155);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.privacy-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-content li {
+  margin-bottom: 0.8rem;
+}
+
+.privacy-content a {
+  color: var(--color-primary-blue, #007aff);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .privacy-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .privacy-sidebar {
+    display: none; /* Hide sidebar on mobile for now */
+  }
+
+  .privacy-content {
+    padding: 2rem;
+  }
+  
+  .privacy-content h1 {
+    font-size: 2rem;
+  }
+}
