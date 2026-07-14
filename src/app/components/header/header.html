@@ -1,8 +1,23 @@
 <header [class.scrolled]="isScrolled()">
-  <div style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em;">PAYSAT</div>
-  <nav style="display: flex; gap: 1.5rem; align-items: center;">
-    <a routerLink="/" style="text-decoration: none; color: #333; font-weight: 500;">Inicio</a>
-    <a routerLink="/services" style="text-decoration: none; color: #333; font-weight: 500;">Servicios</a>
-    <a routerLink="/help" style="text-decoration: none; color: #333; font-weight: 500;">Ayuda</a>
+  <a routerLink="/" class="logo" aria-label="Inicio PAYSAT">
+    <img src="letras.png" alt="PAYSAT MONEY S.A." class="logo-img" />
+  </a>
+
+  <nav class="main-nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+    <a routerLink="/soluciones" routerLinkActive="active">Soluciones</a>
+    <a routerLink="/pagocel" routerLinkActive="active">PAGOCEL</a>
+    <a (click)="scrollToBenefits($event)">Instituciones Financieras</a>
+    <a (click)="scrollToIntegration($event)">Integracion</a>
+    <a routerLink="/seguridad" routerLinkActive="active">Seguridad y Cumplimiento</a>
+
+    <a routerLink="/recursos" routerLinkActive="active">Recursos</a>
+
+    <a routerLink="/abre-tu-cuenta" routerLinkActive="active">Contacto</a>
   </nav>
+
+  <div class="header-actions">
+    <button routerLink="/abre-tu-cuenta" class="cta-btn">Solicitar una reuni&oacute;n</button>
+  </div>
 </header>
