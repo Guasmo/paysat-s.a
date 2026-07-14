@@ -1,61 +1,185 @@
-<main style="padding: 2rem; overflow-x: hidden;">
-  
+<main style="overflow-x: hidden;">
+
   <!-- Nueva sección Funciones -->
   <section class="features-section">
     <div class="features-container">
       <div class="features-text">
-        <h2 style="font-size: 3.5rem; letter-spacing: -0.04em; margin-bottom: 1rem; color: var(--color-primary-navy); font-weight: 800; line-height: 1.1;">Funciona con cada <br><span style="font-style: italic;">modelo de negocio.</span></h2>
-        <p style="font-size: 1.15rem; color: var(--color-text-muted); max-width: 500px; line-height: 1.6; margin-bottom: 2rem;">Una sola integración. Tarjetas de crédito, débito, transferencias bancarias y billeteras virtuales. PAYSAT se adapta a tus necesidades con herramientas diseñadas para escalar tus operaciones.</p>
-        
-        <div style="display: flex; gap: 1rem; align-items: center;">
-          <button routerLink="/services" style="padding: 0.8rem 1.5rem; background-color: var(--color-primary-navy); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background-color 0.2s;">Descubrir funciones →</button>
-          <button style="padding: 0.8rem 1.5rem; background-color: transparent; color: var(--color-primary-navy); border: 1px solid var(--color-primary-navy); border-radius: 8px; font-weight: 600; cursor: pointer;">Ver documentación</button>
+        <h2>
+          Funciona con cada <br><span style="font-style: italic;">modelo de negocio.</span></h2>
+        <p>
+          Una sola integración. Tarjetas de crédito, débito, transferencias bancarias y billeteras virtuales. PAYSAT
+          Money S.A se
+          adapta a tus necesidades con herramientas diseñadas para escalar tus operaciones.</p>
+
+        <div class="features-actions">
+          <button routerLink="/services" class="feat-btn-primary">Descubrir funciones →</button>
         </div>
       </div>
 
       <div class="features-visuals">
         <div class="visual-wrapper">
-          <!-- Fondo decorativo tipo tarjetas para dar el look and feel de la imagen -->
-          <div class="bg-card card-1"></div>
-          <div class="bg-card card-2"></div>
-          <div class="bg-card card-3"></div>
-          
-          <div class="visual visual-1">
-            <img ngSrc="assets/images/ios1.png" alt="iOS App Mockup 1" width="300" height="600" priority>
+          <!-- Complementary Mockup 1 (5) -->
+          <div class="visual visual-comp-1">
+            <img ngSrc="/mockup-5.png" alt="PAYSAT App Screen 1" width="766" height="1472">
           </div>
-          <div class="visual visual-2">
-            <img ngSrc="assets/images/ios2.png" alt="iOS App Mockup 2" width="280" height="560">
+
+          <!-- Complementary Mockup 2 (9) -->
+          <div class="visual visual-comp-2">
+            <img ngSrc="/mockup-9.png" alt="PAYSAT App Screen 2" width="766" height="1472">
+          </div>
+
+          <!-- Second Most Important Mockup (7) -->
+          <div class="visual visual-second">
+            <img ngSrc="/mockup-7.png" alt="PAYSAT App Screen 3" width="766" height="1472">
+          </div>
+
+          <!-- Most Important Mockup (8) -->
+          <div class="visual visual-main">
+            <img ngSrc="/mockup-8.png" alt="PAYSAT App Main Screen" width="766" height="1472" priority>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div style="max-width: 1200px; margin: 8rem auto 0 auto;">
-    <h2 style="font-size: 2.5rem; letter-spacing: -0.03em; margin-bottom: 1rem; text-align: center;">La solución definitiva para tus pagos</h2>
-    <p style="font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 auto; text-align: center;">PAYSAT revoluciona la forma en que los negocios gestionan sus transacciones. Nuestra plataforma está diseñada para ser rápida, segura y fácilmente escalable. Ya seas un negocio local o una empresa internacional, tenemos las herramientas para optimizar tus ingresos.</p>
-    
-    <div style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
-      <div style="flex: 1 1 30%; padding: 2rem; border: 1px solid #eaeaea; border-radius: 12px; min-width: 280px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Integración Sin Esfuerzo</h3>
-        <p style="color: #666; line-height: 1.6;">Conecta PAYSAT a tu sistema actual en minutos. Nuestra API robusta y bien documentada permite a tu equipo de desarrollo lanzar experiencias de pago personalizadas sin complicaciones técnicas.</p>
+  <!-- Como nos integramos -->
+  <section id="integracion" class="integration-section">
+    <div class="integration-container">
+      <div class="integration-header">
+        <span class="integration-eyebrow">Integracion</span>
+        <h2>Como nos integramos</h2>
+        <p>PAYSAT se conecta mediante APIs a tu infraestructura existente. <strong>Sin reemplazar tu Core
+            Bancario.</strong></p>
       </div>
-      <div style="flex: 1 1 30%; padding: 2rem; border: 1px solid #eaeaea; border-radius: 12px; min-width: 280px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Seguridad de Nivel Bancario</h3>
-        <p style="color: #666; line-height: 1.6;">Protegemos cada transacción con encriptación de extremo a extremo y herramientas antifraude avanzadas. Cumplimos con los más altos estándares PCI-DSS para tu total tranquilidad.</p>
+
+      <div class="integration-visual">
+        <img src="diagrama-integracion.jpg" alt="Diagrama de integracion PAYSAT" width="900" height="500" />
       </div>
-      <div style="flex: 1 1 30%; padding: 2rem; border: 1px solid #eaeaea; border-radius: 12px; min-width: 280px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Soporte Dedicado</h3>
-        <p style="color: #666; line-height: 1.6;">Nuestro equipo de expertos está disponible 24/7 para ayudarte. No estarás solo en ningún momento; desde la configuración inicial hasta la optimización de tus tasas de conversión.</p>
+
+      <div class="integration-note">
+        <svg viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 6v5M10 13v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <span>Todo se conecta via API. Tu infraestructura actual sigue operando sin cambios.</span>
+      </div>
+
+      <div class="integration-cta">
+        <a routerLink="/proceso-implementacion" class="integration-btn">Descubrir proceso de integracion →</a>
       </div>
     </div>
+  </section>
 
-    <section style="margin-top: 5rem; text-align: center;">
-      <h2 style="font-size: 2.2rem; letter-spacing: -0.02em; margin-bottom: 1.5rem;">Cientos de empresas confían en nosotros</h2>
-      <p style="color: #666; font-size: 1.1rem; max-width: 700px; margin: 0 auto 3rem auto;">Al usar PAYSAT, reduces los carritos abandonados, mejoras la experiencia de tus clientes y accedes a datos analíticos detallados para tomar mejores decisiones.</p>
-    </section>
-  </div>
+  <!-- Beneficios para la institucion -->
+  <section id="beneficios" class="benefits-section">
+    <div class="benefits-container">
+      <span class="benefits-eyebrow">Beneficios</span>
+      <h2><span style="color: #F59E0B;">Beneficios</span> para tu institucion</h2>
+      <p class="benefits-subtitle">Integrar PAYSAT transforma tu operacion financiera</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <img src="mas-productos.jpg" alt="Mas productos" class="benefit-img" />
+          <h3>Mas productos</h3>
+          <p>Amplia tu portafolio con tarjetas, pagos y wallets sin desarrollar desde cero.</p>
+        </div>
+
+        <div class="benefit-card">
+          <img src="mas-clientes.jpg" alt="Mas clientes" class="benefit-img" />
+          <h3>Mas clientes</h3>
+          <p>Atrae nuevos usuarios con soluciones digitales modernas y frictionless.</p>
+        </div>
+
+        <div class="benefit-card">
+          <img src="menos-costos.jpg" alt="Menos costos" class="benefit-img" />
+          <h3>Menos costos</h3>
+          <p>Reduce costos operativos con una integracion unica y procesamiento automatizado.</p>
+        </div>
+
+        <div class="benefit-card">
+          <img src="mayor-competitividad.jpg" alt="Mayor competitividad" class="benefit-img" />
+          <h3>Mayor competitividad</h3>
+          <p>Oferce tecnologia de nivel internacional que te diferencia del mercado local.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué PAYSAT? -->
+  <section class="why-section">
+    <div class="why-container">
+      <div class="why-left">
+        <div class="why-text">
+          <h2>&iquest;Por qu&eacute; <span class="why-accent">PAYSAT</span>?</h2>
+          <p class="why-subtitle">
+            No somos solo una plataforma m&aacute;s. Somos el socio tecnol&oacute;gico que tu instituci&oacute;n
+            necesita para competir en la era digital.
+          </p>
+        </div>
+
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>Presencia local</h3>
+              <p>Equipo en Ecuador que entiende tu mercado, tu regulaci&oacute;n y tus clientes.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>Respaldo internacional</h3>
+              <p>Tecnolog&iacute;a probada en m&uacute;ltiples pa&iacute;ses de Am&eacute;rica Latina con est&aacute;ndares globales.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>Integraci&oacute;n con sistemas existentes</h3>
+              <p>APIs REST que se conectan a tu core bancario sin reemplazar tu infraestructura actual.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>Modelo modular</h3>
+              <p>Elige solo lo que necesitas: pagos, tarjetas, wallets, KYC o la suite completa.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>White Label</h3>
+              <p>Tu marca, tu identidad. La tecnolog&iacute;a es nuestra, la experiencia es tuya.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>Soporte especializado</h3>
+              <p>Equipo dedicado de ingenieros y consultores que te acompa&ntilde;an durante toda la integraci&oacute;n.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-bar"></div>
+            <div>
+              <h3>Capacidad de expansi&oacute;n regional</h3>
+              <p>Escalable a Colombia, Per&uacute; y toda Am&eacute;rica Latina con una sola integraci&oacute;n.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-visual">
+        <img src="splash.png" alt="PAYSAT App" class="why-img" />
+      </div>
+    </div>
+  </section>
 </main>
-
 <app-contact></app-contact>
-
