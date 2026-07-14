@@ -1,0 +1,457 @@
+/* ═══════════════════════════════════════════════
+   RECURSOS — recursos.css
+   FAQ accordion estilo screenshot + descargas + casos + noticias
+═══════════════════════════════════════════════ */
+
+/* ── Theme Variables ── */
+.rec-hero,
+.rec-downloads,
+.rec-faq,
+.rec-casos,
+.rec-noticias {
+  --rec-amber: #F59E0B;
+  --rec-amber-hover: #D97706;
+  --rec-amber-dim: rgba(245, 158, 11, 0.08);
+  --rec-amber-border: rgba(245, 158, 11, 0.2);
+  --rec-teal: #00B4D8;
+  --rec-teal-dim: rgba(0, 180, 216, 0.08);
+  --rec-teal-border: rgba(0, 180, 216, 0.2);
+  --rec-bg: #ffffff;
+  --rec-bg-alt: #f8fafc;
+  --rec-text-primary: #0A192F;
+  --rec-text-muted: #64748b;
+  --rec-text-dim: #94a3b8;
+  --rec-border: #e2e8f0;
+  --rec-border-hover: #cbd5e1;
+  --rec-shadow-card: 0 4px 16px rgba(10, 25, 47, 0.06);
+  --rec-shadow-float: 0 8px 32px rgba(10, 25, 47, 0.1);
+  --rec-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --rec-duration: 200ms;
+}
+
+/* ── Shared ── */
+.rec-section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--rec-text-primary);
+  margin: 0 0 0.75rem;
+  text-align: center;
+}
+
+.rec-section-sub {
+  font-size: 1.05rem;
+  color: var(--rec-text-muted);
+  line-height: 1.7;
+  margin: 0 auto 3rem;
+  max-width: 550px;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────────  */
+.rec-hero {
+  background: var(--rec-bg);
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.rec-hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.rec-hero-h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--rec-text-primary);
+  margin: 0 0 1.5rem;
+}
+
+.rec-hero-accent {
+  color: var(--rec-amber);
+}
+
+.rec-hero-sub {
+  font-size: 1.1rem;
+  color: var(--rec-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────
+   DESCARGAS
+───────────────────────────────────────────────  */
+.rec-downloads {
+  background: var(--rec-bg-alt);
+  padding: 5rem 2rem;
+}
+
+.rec-downloads-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rec-downloads-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rec-download-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--rec-bg);
+  border: 1px solid var(--rec-border);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform 200ms var(--rec-spring), box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.rec-download-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rec-shadow-float);
+  border-color: var(--rec-border-hover);
+}
+
+.rec-download-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--rec-teal-dim);
+  border: 1px solid var(--rec-teal-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rec-teal);
+}
+
+.rec-download-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.rec-download-icon--amber {
+  background: var(--rec-amber-dim);
+  border-color: var(--rec-amber-border);
+  color: var(--rec-amber);
+}
+
+.rec-download-icon--teal {
+  background: var(--rec-teal-dim);
+  border-color: var(--rec-teal-border);
+  color: var(--rec-teal);
+}
+
+.rec-download-info {
+  flex: 1;
+}
+
+.rec-download-info h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--rec-text-primary);
+  margin: 0 0 0.25rem;
+}
+
+.rec-download-info p {
+  font-size: 0.88rem;
+  color: var(--rec-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rec-download-badge {
+  flex-shrink: 0;
+  padding: 0.3rem 0.75rem;
+  background: var(--rec-amber-dim);
+  border: 1px solid var(--rec-amber-border);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--rec-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─────────────────────────────────────────────
+   FAQ — Accordion estilo screenshot
+───────────────────────────────────────────────  */
+.rec-faq {
+  background: var(--rec-bg);
+  padding: 5rem 2rem;
+}
+
+.rec-faq-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.rec-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rec-faq-item {
+  border-bottom: 1px solid var(--rec-border);
+}
+
+.rec-faq-item:first-child {
+  border-top: 1px solid var(--rec-border);
+}
+
+.rec-faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--rec-text-primary);
+  transition: color 200ms ease;
+}
+
+.rec-faq-q:hover {
+  color: var(--rec-amber);
+}
+
+.rec-faq-chevron {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--rec-text-dim);
+  transition: transform 300ms var(--rec-spring);
+}
+
+.rec-faq-item.open .rec-faq-chevron {
+  transform: rotate(180deg);
+  color: var(--rec-amber);
+}
+
+.rec-faq-a {
+  overflow: hidden;
+  transition: max-height 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rec-faq-a-inner {
+  padding: 0 0.5rem 1.25rem;
+}
+
+.rec-faq-a-inner p {
+  font-size: 0.95rem;
+  color: var(--rec-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────
+   CASOS DE USO
+───────────────────────────────────────────────  */
+.rec-casos {
+  background: var(--rec-bg-alt);
+  padding: 5rem 2rem;
+}
+
+.rec-casos-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rec-casos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.rec-caso-card {
+  background: var(--rec-bg);
+  border: 1px solid var(--rec-border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: var(--rec-shadow-card);
+  transition: transform 300ms var(--rec-spring), box-shadow 300ms ease;
+}
+
+.rec-caso-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--rec-shadow-float);
+}
+
+.rec-caso-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--rec-amber);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  opacity: 0.4;
+}
+
+.rec-caso-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rec-text-primary);
+  margin: 0;
+}
+
+.rec-caso-card p {
+  font-size: 0.9rem;
+  color: var(--rec-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.rec-caso-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  background: var(--rec-teal-dim);
+  border: 1px solid var(--rec-teal-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--rec-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─────────────────────────────────────────────
+   NOTICIAS
+───────────────────────────────────────────────  */
+.rec-noticias {
+  background: var(--rec-bg);
+  padding: 5rem 2rem;
+}
+
+.rec-noticias-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rec-noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.rec-noticia-card {
+  background: var(--rec-bg);
+  border: 1px solid var(--rec-border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: var(--rec-shadow-card);
+  transition: transform 300ms var(--rec-spring), box-shadow 300ms ease;
+}
+
+.rec-noticia-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--rec-shadow-float);
+}
+
+.rec-noticia-date {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--rec-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rec-noticia-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rec-text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.rec-noticia-card p {
+  font-size: 0.9rem;
+  color: var(--rec-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.rec-noticia-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--rec-teal);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.rec-noticia-link:hover {
+  color: var(--rec-amber);
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────  */
+@media (max-width: 900px) {
+  .rec-hero {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .rec-casos-grid,
+  .rec-noticias-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .rec-download-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .rec-download-badge {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .rec-hero {
+    padding: 5rem 1.25rem 2.5rem;
+  }
+
+  .rec-downloads,
+  .rec-faq,
+  .rec-casos,
+  .rec-noticias {
+    padding: 3rem 1.25rem;
+  }
+
+  .rec-faq-q {
+    font-size: 0.92rem;
+    padding: 1rem 0.25rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,187 @@
+<!-- ==============================================
+   RECURSOS — Descargas + FAQ + Casos de uso + Noticias
+=============================================== -->
+
+<!-- ==============================================
+   DESCARGAS — Brochure, Ficha, Guia
+=============================================== -->
+<section class="rec-downloads" aria-labelledby="rec-downloads-heading">
+  <div class="rec-downloads-inner">
+    <h2 id="rec-downloads-heading" class="rec-section-title">Recursos PaySat Money S.A</h2>
+    <p class="rec-section-sub">Descarga nuestra documentaci&oacute;n institucional y conoce todas las soluciones.</p>
+
+    <div class="rec-downloads-grid">
+
+      <a href="#" class="rec-download-card" aria-label="Descargar Brochure Institucional">
+        <div class="rec-download-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+        </div>
+        <div class="rec-download-info">
+          <h3>Brochure Institucional</h3>
+          <p>Visi&oacute;n general de PAYSAT, nuestras soluciones y propuesta de valor para instituciones financieras.</p>
+        </div>
+        <span class="rec-download-badge">PDF</span>
+      </a>
+
+      <a href="#" class="rec-download-card" aria-label="Descargar Ficha PAGOCEL">
+        <div class="rec-download-icon rec-download-icon--amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+            <path d="M7 8h4M7 11h8" />
+          </svg>
+        </div>
+        <div class="rec-download-info">
+          <h3>Ficha PAGOCEL</h3>
+          <p>Caracter&iacute;sticas t&eacute;cnicas, funcionalidades y beneficios de nuestra plataforma de pagos
+            m&oacute;viles.</p>
+        </div>
+        <span class="rec-download-badge">PDF</span>
+      </a>
+
+      <a href="#" class="rec-download-card" aria-label="Descargar Guia de Integracion">
+        <div class="rec-download-icon rec-download-icon--teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+            <path d="M9 7h6M9 11h4" />
+          </svg>
+        </div>
+        <div class="rec-download-info">
+          <h3>Gu&iacute;a de Integraci&oacute;n</h3>
+          <p>Documentaci&oacute;n t&eacute;cnica para integrar PAYSAT v&iacute;a API REST con tu core bancario.</p>
+        </div>
+        <span class="rec-download-badge">PDF</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+   FAQ — Preguntas frecuentes con accordion
+=============================================== -->
+<section class="rec-faq" aria-labelledby="rec-faq-heading">
+  <div class="rec-faq-inner">
+    <h2 id="rec-faq-heading" class="rec-section-title">Preguntas frecuentes</h2>
+    <p class="rec-section-sub">Resolvemos tus dudas sobre nuestras soluciones tecnol&oacute;gicas.</p>
+
+    <div class="rec-faq-list" role="list">
+
+      @for (faq of faqs; track faq.id) {
+      <div class="rec-faq-item" [class.open]="faq.open" role="listitem">
+        <button class="rec-faq-q" (click)="toggleFaq(faq)" [attr.aria-expanded]="faq.open"
+          [attr.aria-controls]="'faq-answer-' + faq.id">
+          <span>{{ faq.question }}</span>
+          <svg class="rec-faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6l4 4 4-4" />
+          </svg>
+        </button>
+        <div class="rec-faq-a" [id]="'faq-answer-' + faq.id" [class.show]="faq.open"
+          [style.maxHeight]="faq.open ? faq.height + 'px' : '0'" role="region">
+          <div class="rec-faq-a-inner" #faqContent>
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+      }
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+   CASOS DE USO
+=============================================== -->
+<section class="rec-casos" aria-labelledby="rec-casos-heading">
+  <div class="rec-casos-inner">
+    <h2 id="rec-casos-heading" class="rec-section-title">Casos de uso</h2>
+    <p class="rec-section-sub">Descubre c&oacute;mo instituciones como la tuya est&aacute;n transformando sus
+      operaciones.</p>
+
+    <div class="rec-casos-grid">
+
+      <article class="rec-caso-card">
+        <div class="rec-caso-num">01</div>
+        <h3>Banco cooperativo</h3>
+        <p>Implement&oacute; PAGOCEL para transferencias interbancarias y redujo el tiempo de proceso en un 85%.</p>
+        <span class="rec-caso-tag">Banca</span>
+      </article>
+
+      <article class="rec-caso-card">
+        <div class="rec-caso-num">02</div>
+        <h3>Cooperativa de ahorro</h3>
+        <p>Integr&oacute; wallets digitales y QR para sus 120,000 socios, aumentando la adopci&oacute;n digital en un
+          40%.</p>
+        <span class="rec-caso-tag">Cooperativas</span>
+      </article>
+
+      <article class="rec-caso-card">
+        <div class="rec-caso-num">03</div>
+        <h3>Mutualista de ahorro</h3>
+        <p>Digitaliz&oacute; su proceso de KYC y onboarding con biometr&iacute;a, reduciendo el tiempo de apertura de
+          cuenta de 3 d&iacute;as a 5 minutos.</p>
+        <span class="rec-caso-tag">Mutualistas</span>
+      </article>
+
+      <article class="rec-caso-card">
+        <div class="rec-caso-num">04</div>
+        <h3>Fintech emergente</h3>
+        <p>Lanz&oacute; su plataforma de pagos en 8 semanas usando la API REST de PAYSAT y KYC automatizado.</p>
+        <span class="rec-caso-tag">Fintech</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+   NOTICIAS
+=============================================== -->
+<section class="rec-noticias" aria-labelledby="rec-noticias-heading">
+  <div class="rec-noticias-inner">
+    <h2 id="rec-noticias-heading" class="rec-section-title">Noticias</h2>
+    <p class="rec-section-sub">Las &uacute;ltimas novedades de PAYSAT y el sector fintech en Ecuador.</p>
+
+    <div class="rec-noticias-grid">
+
+      <article class="rec-noticia-card">
+        <div class="rec-noticia-date">12 Jun 2026</div>
+        <h3>PAYSAT obtiene certificaci&oacute;n PCI DSS Nivel 1</h3>
+        <p>Nuestra plataforma cumple con los m&aacute;s altos est&aacute;ndares de seguridad para el procesamiento de
+          datos de tarjetas.</p>
+        <a href="#" class="rec-noticia-link">Leer m&aacute;s &rarr;</a>
+      </article>
+
+      <article class="rec-noticia-card">
+        <div class="rec-noticia-date">28 May 2026</div>
+        <h3>Nueva API de biometr&iacute;a para KYC en tiempo real</h3>
+        <p>Reconocimiento facial y validaci&oacute;n de documentos OCR integrados directamente en el onboarding digital.
+        </p>
+        <a href="#" class="rec-noticia-link">Leer m&aacute;s &rarr;</a>
+      </article>
+
+      <article class="rec-noticia-card">
+        <div class="rec-noticia-date">15 Abr 2026</div>
+        <h3>PAYSAT se expande a Colombia y Per&uacute;</h3>
+        <p>Nuestra infraestructura tecnol&oacute;gica ahora disponible para instituciones financieras en la
+          regi&oacute;n.</p>
+        <a href="#" class="rec-noticia-link">Leer m&aacute;s &rarr;</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<app-contact></app-contact>
