@@ -1,0 +1,391 @@
+/* ═══════════════════════════════════════════════
+   PROCESO IMPLEMENTACION — White/Navy/Amber
+═══════════════════════════════════════════════ */
+
+/* ── Hero — White background, split layout ── */
+.pi-hero {
+  background-color: #ffffff;
+  min-height: calc(100dvh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pi-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.35rem 1rem;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F59E0B;
+  margin-bottom: 1.5rem;
+}
+
+.pi-hero-text {
+  max-width: 550px;
+}
+
+.pi-hero-h1 {
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-primary-navy);
+  margin: 0 0 1rem;
+}
+
+.pi-hero-accent {
+  color: #f3b240;
+}
+
+.pi-hero-sub {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 2rem;
+}
+
+.pi-hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.pi-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--color-primary-navy);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pi-btn-primary:hover {
+  background: #1e88e5;
+  transform: translateY(-2px);
+}
+
+.pi-btn-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+.pi-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ── Floating cards (white background on white hero) ── */
+.pi-float {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pi-float--tl { top: 6%; left: 3%; }
+.pi-float--bl { bottom: 8%; left: 4%; }
+.pi-float--tr { top: 6%; right: 3%; }
+.pi-float--br { bottom: 8%; right: 4%; }
+
+.pi-fcard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem;
+  min-width: 160px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 8px 32px rgba(10, 25, 47, 0.1);
+}
+
+.pi-fcard-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pi-fcard-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  flex: 1;
+}
+
+.pi-fcard-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.pi-fcard-icon svg { width: 12px; height: 12px; }
+
+.pi-fcard-icon--teal {
+  background: rgba(0, 180, 216, 0.08);
+  color: #00B4D8;
+}
+
+.pi-fcard-icon--amber {
+  background: rgba(245, 158, 11, 0.08);
+  color: #F59E0B;
+}
+
+.pi-fcard-val {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--color-primary-navy);
+  margin: 0;
+  line-height: 1;
+}
+
+.pi-fcard-val--amber { color: #F59E0B; }
+
+.pi-fcard-sub {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.pi-fcard-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.pi-fcard-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.pi-fcard-stat-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-primary-navy);
+}
+
+/* ═══════════════════════════════════════════════
+   TIMELINE SECTION
+═══════════════════════════════════════════════ */
+.pi-timeline-section {
+  padding: 5rem 2rem;
+  background: #f8fafc;
+}
+
+.pi-timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pi-timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pi-timeline-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-primary-navy);
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.pi-timeline-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Timeline ── */
+.pi-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+/* Track line */
+.pi-track {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.pi-track-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #F59E0B, #f3b240);
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+/* ── Step ── */
+.pi-step {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.pi-step-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.5s ease, background 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.pi-step-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #94a3b8;
+  transition: color 0.5s ease;
+}
+
+.pi-step--active .pi-step-marker {
+  border-color: #F59E0B;
+  background: #F59E0B;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+}
+
+.pi-step--active .pi-step-num {
+  color: #ffffff;
+}
+
+/* Step card */
+.pi-step-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 170px;
+  text-align: center;
+  transition: border-color 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.pi-step--active .pi-step-card {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1);
+  transform: translateY(-4px);
+}
+
+.pi-step-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  margin: 0 0 0.4rem;
+}
+
+.pi-step-card p {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pi-hero {
+    padding: 6rem 1.5rem 3rem;
+    min-height: auto;
+  }
+
+  .pi-float { display: none; }
+
+  .pi-timeline {
+    flex-direction: column;
+    padding-top: 0;
+    padding-left: 30px;
+    gap: 0;
+  }
+
+  .pi-track {
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    right: auto;
+    width: 4px;
+    height: 100%;
+  }
+
+  .pi-track-fill {
+    width: 100% !important;
+    height: var(--progress, 0%);
+    transition: height 0.8s ease;
+  }
+
+  .pi-step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .pi-step-marker {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .pi-step-card {
+    max-width: none;
+    text-align: left;
+  }
+}
