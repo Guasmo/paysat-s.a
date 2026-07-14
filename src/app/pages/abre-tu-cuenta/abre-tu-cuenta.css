@@ -1,0 +1,156 @@
+.open-account {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+.open-account__bg-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+
+.open-account__wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.open-account__content {
+  max-width: 600px;
+  position: relative;
+}
+
+.open-account__title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-primary-navy, #0A192F);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.open-account__subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted, #64748b);
+  margin-bottom: 2.5rem;
+}
+
+.open-account__card {
+  display: flex;
+  align-items: center;
+  background-color: #f8fafc;
+  border-radius: 18px;
+  padding: 2rem 0 2rem 2.5rem;
+  text-align: left;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.open-account__card-text {
+  flex: 1;
+}
+
+.open-account__card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.open-account__card-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.open-account__phone {
+  position: absolute;
+  top: 50%;
+  right: -80px;
+  transform: translateY(-50%);
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.open-account__phone-img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+.open-account__stores {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.store-badge {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.store-badge:hover {
+  transform: scale(1.05);
+}
+
+.store-badge img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .open-account {
+    padding: 4rem 1.5rem;
+  }
+
+  .open-account__bg-shape {
+    width: 60%;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .open-account__card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .open-account__stores {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .open-account {
+    padding: 3rem 1.25rem;
+  }
+
+  .open-account__bg-shape {
+    width: 80%;
+    opacity: 0.5;
+  }
+
+  .open-account__title {
+    font-size: 2rem;
+  }
+
+  .store-badge img {
+    height: 40px;
+  }
+}
