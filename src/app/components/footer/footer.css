@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════
+   FOOTER — Navy background, white/amber text
+═══════════════════════════════════════════════ */
+.pg-footer {
+  background: var(--color-primary-navy, #0A192F);
+  color: #cbd5e1;
+  padding: 4rem 5vw 2rem;
+}
+
+.pg-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.pg-footer-logo {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.pg-footer-logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Heading */
+.pg-footer-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+}
+
+/* Nav links */
+.pg-footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pg-footer-nav a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.pg-footer-nav a:hover {
+  color: #F59E0B;
+}
+
+/* App section */
+.pg-footer-app-text {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin: 0 0 1rem;
+}
+
+.pg-footer-app-badges {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pg-footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.pg-footer-badge:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.pg-footer-badge svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Bottom bar */
+.pg-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pg-footer-legal {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 700px;
+}
+
+.pg-footer-copy {
+  font-size: 0.75rem;
+  color: #475569;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 800px) {
+  .pg-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
