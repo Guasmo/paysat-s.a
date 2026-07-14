@@ -10,19 +10,22 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class Contact {
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
+    institucion: new FormControl('', Validators.required),
+    cargo: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    company: new FormControl(''),
-    interest: new FormControl('', Validators.required),
+    telefono: new FormControl('', Validators.required),
+    tipoInstitucion: new FormControl('', Validators.required),
+    solucion: new FormControl('', Validators.required),
+    clientes: new FormControl('', Validators.required),
     message: new FormControl('', Validators.required),
   });
-  
+
   isSubmitting = signal(false);
   submitSuccess = signal(false);
 
   onSubmit() {
     if (this.contactForm.valid) {
       this.isSubmitting.set(true);
-      // Simulate API call
       setTimeout(() => {
         this.isSubmitting.set(false);
         this.submitSuccess.set(true);
@@ -34,4 +37,3 @@ export class Contact {
     }
   }
 }
-

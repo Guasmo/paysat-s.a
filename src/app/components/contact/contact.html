@@ -2,8 +2,8 @@
   <div class="contact-container">
     <div class="contact-text">
       <h2>Habla con nuestro equipo</h2>
-      <p>Descubre cómo PAYSAT puede integrarse en tu negocio. Completa el formulario y un especialista en pagos
-        digitales se pondrá en contacto contigo en breve para ofrecerte una solución a medida.</p>
+      <p>Descubre c&oacute;mo PAYSAT puede integrarse en tu instituci&oacute;n. Completa el formulario y un especialista
+        se pondr&aacute; en contacto contigo para ofrecerte una soluci&oacute;n a medida.</p>
 
       <hr class="text-separator">
 
@@ -25,6 +25,7 @@
           </a>
           <a href="#" class="social-card tiktok">
             <div class="social-info">
+              <img src="/tiktok-svgrepo-com.svg" alt="Tiktok" class="social-icon">
               <strong>TikTok</strong>
             </div>
             <span>@paysat</span>
@@ -35,43 +36,82 @@
 
     <div class="contact-form-wrapper">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+
         <div class="form-row">
           <div class="form-group half-width">
             <label for="name">Nombre completo</label>
-            <input id="name" type="text" formControlName="name" placeholder="Ej. Ana Pérez"
+            <input id="name" type="text" formControlName="name" placeholder="Ej. Juan Perez"
               [class.invalid]="contactForm.controls.name.invalid && contactForm.controls.name.touched">
           </div>
-
           <div class="form-group half-width">
-            <label for="email">Correo corporativo</label>
-            <input id="email" type="email" formControlName="email" placeholder="ana@empresa.com"
+            <label for="institucion">Instituci&oacute;n</label>
+            <input id="institucion" type="text" formControlName="institucion" placeholder="Ej. Banco del Austro"
+              [class.invalid]="contactForm.controls.institucion.invalid && contactForm.controls.institucion.touched">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="cargo">Cargo</label>
+            <input id="cargo" type="text" formControlName="cargo" placeholder="Ej. Gerente de Tecnolog&iacute;a"
+              [class.invalid]="contactForm.controls.cargo.invalid && contactForm.controls.cargo.touched">
+          </div>
+          <div class="form-group half-width">
+            <label for="email">Correo electr&oacute;nico</label>
+            <input id="email" type="email" formControlName="email" placeholder="juan@banco.com"
               [class.invalid]="contactForm.controls.email.invalid && contactForm.controls.email.touched">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group half-width">
-            <label for="company">Empresa (Opcional)</label>
-            <input id="company" type="text" formControlName="company" placeholder="Nombre de tu empresa">
+            <label for="telefono">Tel&eacute;fono</label>
+            <input id="telefono" type="tel" formControlName="telefono" placeholder="Ej. +593 99 123 4567"
+              [class.invalid]="contactForm.controls.telefono.invalid && contactForm.controls.telefono.touched">
           </div>
-
           <div class="form-group half-width">
-            <label for="interest">¿En qué estás más interesado?</label>
-            <select id="interest" formControlName="interest"
-              [class.invalid]="contactForm.controls.interest.invalid && contactForm.controls.interest.touched">
-              <option value="" disabled selected>Selecciona una opción</option>
-              <option value="payments">Procesamiento de pagos</option>
-              <option value="subscriptions">Suscripciones recurrentes</option>
-              <option value="integrations">Integración vía API</option>
-              <option value="other">Otro</option>
+            <label for="tipoInstitucion">Tipo de instituci&oacute;n</label>
+            <select id="tipoInstitucion" formControlName="tipoInstitucion"
+              [class.invalid]="contactForm.controls.tipoInstitucion.invalid && contactForm.controls.tipoInstitucion.touched">
+              <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+              <option value="banco">Banco</option>
+              <option value="cooperativa">Cooperativa</option>
+              <option value="mutualista">Mutualista</option>
+              <option value="fintech">Fintech</option>
+              <option value="otro">Otro</option>
             </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="solucion">Soluci&oacute;n de inter&eacute;s</label>
+            <select id="solucion" formControlName="solucion"
+              [class.invalid]="contactForm.controls.solucion.invalid && contactForm.controls.solucion.touched">
+              <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+              <option value="pagocel">PAGOCEL</option>
+              <option value="integracion-bancaria">Integraci&oacute;n Bancaria</option>
+              <option value="tarjetas">Tarjetas Visa / Mastercard</option>
+              <option value="wallets">Wallets Digitales</option>
+              <option value="core-banking">Core Banking</option>
+              <option value="whatsapp-banking">WhatsApp Banking</option>
+              <option value="open-banking">Open Banking</option>
+              <option value="kyc">KYC / Onboarding Digital</option>
+              <option value="seguridad">Seguridad y Cumplimiento</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group half-width">
+            <label for="clientes">N&uacute;mero de clientes / socios</label>
+            <input id="clientes" type="text" formControlName="clientes" placeholder="Ej. 50,000"
+              [class.invalid]="contactForm.controls.clientes.invalid && contactForm.controls.clientes.touched">
           </div>
         </div>
 
         <div class="form-group">
           <label for="message">Mensaje</label>
           <textarea id="message" formControlName="message" rows="4"
-            placeholder="Cuéntanos un poco más sobre tus necesidades..."
+            placeholder="Cu&eacute;ntanos sobre tus necesidades o requerimientos..."
             [class.invalid]="contactForm.controls.message.invalid && contactForm.controls.message.touched"></textarea>
         </div>
 
@@ -79,13 +119,13 @@
           @if (isSubmitting()) {
           Enviando...
           } @else {
-          Solicitar información
+          Solicitar reuni&oacute;n institucional
           }
         </button>
 
         @if (submitSuccess()) {
         <div class="success-message">
-          ¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.
+          &iexcl;Gracias! Nos pondremos en contacto contigo pronto para coordinar la reuni&oacute;n.
         </div>
         }
       </form>
