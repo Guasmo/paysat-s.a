@@ -4,12 +4,17 @@
   </a>
 
   <nav class="main-nav">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    <a routerLink="/" [class.active]="isHomePage() && activeSection() === 'inicio'">Inicio</a>
+
+    <div class="nav-divider"></div>
+
+    <a (click)="scrollToIntegration($event)"
+      [class.active]="isHomePage() && activeSection() === 'integracion'">Integracion</a>
+    <a (click)="scrollToBenefits($event)"
+      [class.active]="isHomePage() && activeSection() === 'beneficios'">Instituciones Financieras</a>
     <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
     <a routerLink="/soluciones" routerLinkActive="active">Soluciones</a>
     <a routerLink="/pagocel" routerLinkActive="active">PAGOCEL</a>
-    <a (click)="scrollToBenefits($event)">Instituciones Financieras</a>
-    <a (click)="scrollToIntegration($event)">Integracion</a>
     <a routerLink="/seguridad" routerLinkActive="active">Seguridad y Cumplimiento</a>
 
     <a routerLink="/recursos" routerLinkActive="active">Recursos</a>
