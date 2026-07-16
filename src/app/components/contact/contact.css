@@ -4,7 +4,7 @@
   /* Visual separation background */
   display: flex;
   justify-content: center;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid var(--color-border);
 }
 
 .contact-container {
@@ -38,7 +38,7 @@
 .text-separator {
   border: 0;
   height: 1px;
-  background: linear-gradient(to right, #eaeaea, transparent);
+  background: linear-gradient(to right, var(--color-border), transparent);
   margin-bottom: 2.5rem;
   width: 100%;
 }
@@ -78,11 +78,11 @@
   align-items: center;
   padding: 1.25rem 1.5rem;
   border-radius: 12px;
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .social-card:hover {
@@ -120,7 +120,7 @@
 .social-card.instagram:hover {
   border-color: transparent;
   background:
-    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(var(--color-bg-alt), var(--color-bg-alt)) padding-box,
     linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) border-box;
 }
 
@@ -131,10 +131,10 @@
 .contact-form-wrapper {
   position: relative;
   top: 7%;
-  background: #ffffff;
+  background: var(--color-bg-alt);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(10, 25, 47, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .contact-form {
@@ -168,12 +168,13 @@ input,
 select,
 textarea {
   padding: 0.75rem 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
   transition: all 200ms ease-out;
-  background-color: #fafafa;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
   width: 100%;
   box-sizing: border-box;
 }
@@ -188,8 +189,8 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--color-primary-blue);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+  background-color: var(--color-bg-alt);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 input.invalid,
@@ -203,17 +204,19 @@ textarea.invalid {
   margin-top: 1rem;
   padding: 1rem;
   background-color: var(--pgc-amber);
-  color: black;
+  color: #17140d;
   border: none;
   border-radius: 8px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.2);
 }
 
 .submit-button:hover:not(:disabled) {
-  background-color: #1565c0;
+  background-color: #FBBF24;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
 }
 
 .submit-button:active:not(:disabled) {

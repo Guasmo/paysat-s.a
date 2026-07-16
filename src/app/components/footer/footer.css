@@ -2,8 +2,8 @@
    FOOTER — Navy background, white/amber text
 ═══════════════════════════════════════════════ */
 .pg-footer {
-  background: var(--color-primary-navy, #0A192F);
-  color: #cbd5e1;
+  background: #0A0806;
+  color: var(--color-text-muted);
   padding: 4rem 5vw 2rem;
 }
 
@@ -34,7 +34,7 @@
 .pg-footer-heading {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-primary-navy);
   margin: 0 0 1.25rem;
 }
 
@@ -47,7 +47,7 @@
 
 .pg-footer-nav a {
   text-decoration: none;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   font-size: 0.88rem;
   font-weight: 500;
   transition: color 0.2s;
@@ -60,7 +60,7 @@
 /* App section */
 .pg-footer-app-text {
   font-size: 0.88rem;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin: 0 0 1rem;
 }
 
@@ -107,7 +107,7 @@
 
 .pg-footer-legal {
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin: 0;
   max-width: 700px;
@@ -115,7 +115,7 @@
 
 .pg-footer-copy {
   font-size: 0.75rem;
-  color: #475569;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
