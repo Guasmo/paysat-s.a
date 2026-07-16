@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-start;
   padding: 6rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--color-bg-light);
   min-height: 80vh;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
   right: 0;
   width: 45%;
   height: 100%;
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.04) 100%);
   clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 0;
 }
@@ -50,13 +50,13 @@
 .open-account__card {
   display: flex;
   align-items: center;
-  background-color: #f8fafc;
+  background-color: var(--color-bg-alt);
   border-radius: 18px;
   padding: 2rem 0 2rem 2.5rem;
   text-align: left;
   gap: 2rem;
   margin-bottom: 2.5rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--color-border);
   overflow: hidden;
 }
 
@@ -67,13 +67,13 @@
 .open-account__card-title {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-primary-navy);
   margin: 0 0 0.5rem;
 }
 
 .open-account__card-desc {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--color-text-muted);
   line-height: 1.5;
   margin: 0;
 }

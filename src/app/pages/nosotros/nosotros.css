@@ -4,7 +4,7 @@
 
 /* ── Hero — full width ── */
 .nos-hero {
-  background-color: #ffffff;
+  background-color: var(--color-bg-light);
   min-height: calc(100dvh - 80px);
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
 
 .nos-hero-sub {
   font-size: 1.05rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0;
   max-width: 480px;
@@ -90,7 +90,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: var(--color-primary-navy);
+  background: var(--color-primary-blue);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -102,7 +102,7 @@
 }
 
 .nos-btn-primary:hover {
-  background: #1e88e5;
+  background: #2563eb;
   transform: translateY(-2px);
 }
 
@@ -205,8 +205,8 @@
 }
 
 .nos-fcard {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 1rem;
   min-width: 160px;
@@ -257,7 +257,7 @@
 
 .nos-fcard-sub {
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin: 0;
   line-height: 1.4;
 }
@@ -294,8 +294,8 @@
 ═══════════════════════════════════════════════ */
 .nos-features {
   padding: 4rem 2rem;
-  background: #ffffff;
-  border-top: 1px solid #f1f5f9;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
 }
 
 .nos-features-inner {
@@ -338,7 +338,7 @@
 
 .nos-feature p {
   font-size: 0.82rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.5;
   margin: 0;
 }
@@ -348,7 +348,7 @@
 ═══════════════════════════════════════════════ */
 .nos-banner {
   padding: 2.5rem 2rem;
-  background: var(--color-primary-navy);
+  background: var(--color-bg-alt);
 }
 
 .nos-banner-inner {
@@ -378,7 +378,7 @@
 .nos-banner-main {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-primary-navy);
   margin: 0 0 0.25rem;
 }
 
@@ -417,7 +417,7 @@
   min-height: 70vh;
   display: flex;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--color-bg-light);
 }
 
 .nos-mission-bg {
@@ -440,7 +440,7 @@
   right: -2px;
   width: 55%;
   height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.7) 50%, #ffffff 80%);
+  background: linear-gradient(90deg, transparent 0%, var(--color-bg-light) 60%, var(--color-bg-light) 100%);
   z-index: 1;
 }
 
@@ -468,7 +468,7 @@
 .nos-mission-content p,
 .nos-vision-content p {
   font-size: 1.05rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0;
   max-width: 480px;
@@ -481,7 +481,7 @@
   min-height: 70vh;
   display: flex;
   overflow: hidden;
-  background: #f8fafc;
+  background: var(--color-bg-alt);
 }
 
 .nos-vision-bg {
@@ -504,7 +504,7 @@
   left: -2px;
   width: 55%;
   height: 100%;
-  background: linear-gradient(270deg, transparent 0%, rgba(248, 250, 252, 0.3) 25%, rgba(248, 250, 252, 0.7) 50%, #f8fafc 80%);
+  background: linear-gradient(270deg, transparent 0%, var(--color-bg-alt) 60%, var(--color-bg-alt) 100%);
   z-index: 1;
 }
 
@@ -535,7 +535,7 @@
 ═══════════════════════════════════════════════ */
 .nos-clients {
   padding: 5rem 2rem;
-  background: #f8fafc;
+  background: var(--color-bg-light);
 }
 
 .nos-clients-inner {
@@ -559,8 +559,8 @@
 }
 
 .nos-client-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
   padding: 2.5rem 2rem;
   display: flex;
@@ -573,7 +573,7 @@
 
 .nos-client-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(10, 25, 47, 0.08);
+  box-shadow: 0 12px 32px rgba(10, 25, 47, 0.3);
 }
 
 .nos-client-icon-wrap {
@@ -612,6 +612,7 @@
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  filter: brightness(0) invert(1);
 }
 
 .nos-client-arc {
@@ -646,7 +647,7 @@
 
 .nos-client-card p {
   font-size: 0.92rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.65;
   margin: 0;
   flex: 1;

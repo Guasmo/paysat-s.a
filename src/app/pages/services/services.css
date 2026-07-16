@@ -15,7 +15,7 @@
 }
 
 .sol-hero {
-  background-color: #ffffff;
+  background-color: var(--color-bg-light);
   min-height: calc(100dvh - 80px);
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@
 
 .sol-hero-sub {
   font-size: 1.05rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin: 0;
 }
@@ -93,7 +93,7 @@
   gap: 0.5rem;
   align-items: center;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   font-weight: 600;
   margin-top: 1rem;
 }
@@ -114,11 +114,11 @@
 
 .sol-visual-card {
   position: absolute;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 18px;
   padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(10, 25, 47, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,8 +202,8 @@
 .sol-float--br .sol-float-loop { animation-delay: 2.4s; }
 
 .sol-fcard {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 1.1rem;
   min-width: 170px;
@@ -211,7 +211,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  box-shadow: 0 8px 32px rgba(10, 25, 47, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .sol-fcard-row {
@@ -223,7 +223,7 @@
 .sol-fcard-label {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--color-text-muted);
   flex: 1;
 }
 
@@ -267,7 +267,7 @@
 
 .sol-fcard-sub {
   font-size: 0.65rem;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin: 0;
   line-height: 1.35;
 }
@@ -312,7 +312,7 @@
   align-items: center;
   gap: 0.5rem;
   background: #F59E0B;
-  color: #000;
+  color: #17140d;
   font-weight: 700;
   font-size: 0.92rem;
   padding: 0.75rem 1rem 0.75rem 1.5rem;
@@ -356,18 +356,18 @@
 .sol-btn-ghost {
   display: inline-flex;
   align-items: center;
-  color: #64748b;
+  color: var(--color-text-muted);
   font-weight: 600;
   font-size: 0.92rem;
   padding: 0.75rem 1.25rem;
   border-radius: 999px;
   text-decoration: none;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--color-border);
   transition: border-color 200ms ease, color 200ms ease;
 }
 
 .sol-btn-ghost:hover {
-  border-color: #cbd5e1;
+  border-color: rgba(255,255,255,0.25);
   color: var(--color-primary-navy);
 }
 
@@ -409,7 +409,7 @@
 
 .sol-divider-sub {
   font-size: 1rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin: 0;
   max-width: 500px;
@@ -419,7 +419,7 @@
 /* Main */
 .solutions-main {
   padding: 5rem 2rem 6rem;
-  background-color: #f8fafc;
+  background-color: var(--color-bg-alt);
 }
 
 /* Grid: asymmetric bento layout */
