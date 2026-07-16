@@ -4,98 +4,6 @@
 =============================================== -->
 <section class="pgc-hero" aria-label="Introduccion a PAGOCEL">
 
-  <!-- Cards flotantes IZQUIERDA -->
-
-  <!-- Top-left: Pago Procesado con check -->
-  <div class="pgc-float pgc-float--tl" aria-hidden="true">
-    <div class="pgc-fcard">
-      <div class="pgc-fcard-row">
-        <span class="pgc-fcard-icon pgc-fcard-icon--teal">
-          <svg viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" />
-            <path d="M6 9l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </span>
-        <span class="pgc-fcard-label">Transferencia</span>
-        <span class="pgc-fcard-badge pgc-fcard-badge--ok">Exitosa</span>
-      </div>
-      <p class="pgc-fcard-amount">$25.00</p>
-      <p class="pgc-fcard-sub">A: Cooperativa Coopmego</p>
-    </div>
-  </div>
-
-  <!-- Bottom-left: Barras QR -->
-  <div class="pgc-float pgc-float--bl" aria-hidden="true">
-    <div class="pgc-fcard">
-      <div class="pgc-fcard-row">
-        <span class="pgc-fcard-icon pgc-fcard-icon--amber">
-          <svg viewBox="0 0 18 18" fill="none">
-            <rect x="2" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4" />
-            <rect x="10" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4" />
-            <rect x="2" y="10" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4" />
-            <rect x="12" y="12" width="2" height="2" fill="currentColor" />
-            <rect x="10" y="10" width="2" height="2" fill="currentColor" />
-          </svg>
-        </span>
-        <span class="pgc-fcard-label">Pago QR</span>
-      </div>
-      <div class="pgc-fcard-bars" aria-hidden="true">
-        <span style="--h:55%"></span>
-        <span style="--h:38%"></span>
-        <span style="--h:72%"></span>
-        <span style="--h:45%"></span>
-        <span style="--h:80%"></span>
-        <span style="--h:60%"></span>
-      </div>
-      <p class="pgc-fcard-sub">Recibe - Cobra - Escanea</p>
-    </div>
-  </div>
-
-  <!-- Cards flotantes DERECHA -->
-
-  <!-- Top-right: QR Dinamico con monto -->
-  <div class="pgc-float pgc-float--tr" aria-hidden="true">
-    <div class="pgc-fcard">
-      <div class="pgc-fcard-row">
-        <span class="pgc-fcard-icon pgc-fcard-icon--amber">
-          <svg viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" />
-            <path d="M9 6v6M6 9h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-          </svg>
-        </span>
-        <span class="pgc-fcard-label">QR para cobros</span>
-      </div>
-      <p class="pgc-fcard-amount pgc-fcard-amount--amber">$150.00</p>
-      <p class="pgc-fcard-sub">Monto fijo - Banco del Austro</p>
-    </div>
-  </div>
-
-  <!-- Bottom-right: Stats del dia -->
-  <div class="pgc-float pgc-float--br" aria-hidden="true">
-    <div class="pgc-fcard">
-      <div class="pgc-fcard-row">
-        <span class="pgc-fcard-icon pgc-fcard-icon--teal">
-          <svg viewBox="0 0 18 18" fill="none">
-            <path d="M3 13l3-4 4 2 5-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </span>
-        <span class="pgc-fcard-label">Transacciones hoy</span>
-      </div>
-      <div class="pgc-fcard-2col">
-        <div class="pgc-fcard-stat">
-          <span class="pgc-fcard-val">1,248</span>
-          <span class="pgc-fcard-sub">Operaciones</span>
-        </div>
-        <div class="pgc-fcard-stat">
-          <span class="pgc-fcard-val">$94k</span>
-          <span class="pgc-fcard-sub">Volumen</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Contenido central: texto izquierda / telefono derecha -->
   <div class="pgc-hero-inner">
 
@@ -120,6 +28,8 @@
         </a>
         <a routerLink="/soluciones" class="pgc-btn-ghost">Ver soluciones</a>
       </div>
+
+
       <div class="pgc-trust-strip" aria-label="Caracteristicas clave">
         <span>Transferencias instant&aacute;neas</span>
         <span aria-hidden="true">-</span>
@@ -131,27 +41,50 @@
 
     <!-- Telefono derecha -->
     <div class="pgc-hero-visual" aria-hidden="true">
+      <!-- Card izquierda conectada: Transferencia Exitosa -->
+      <div class="pgc-float pgc-connected-card pgc-connected-card--left">
+        <div class="pgc-fcard">
+          <div class="pgc-fcard-row">
+            <span class="pgc-fcard-icon">
+              <!-- Tienes que darle al botón verde "Descarga gratis" y guardar la imagen aquí -->
+              <img src="transferencia-bancaria.png" alt="Transferencia" class="pgc-fcard-icon-img" />
+            </span>
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+              <span class="pgc-fcard-label" style="color: var(--pgc-amber);">Transferencia</span>
+              <a href="https://www.flaticon.es/iconos-gratis/transferir-dinero" title="transferir dinero iconos"
+                style="font-size: 0.5rem; color: #64748b; text-decoration: none; margin-top: 2px;">
+              </a>
+            </div>
+          </div>
+          <p class="pgc-fcard-amount">$25.00</p>
+          <p class="pgc-fcard-sub">A: Cooprogreso y muchas instituciones mas</p>
+        </div>
+        <div class="pgc-connector-line pgc-connector-line--left"></div>
+      </div>
+
+      <!-- Phone Shell -->
       <div class="pgc-phone-shell">
         <div class="pgc-phone-bezel">
           <img src="mockup-7.png" alt="Pantalla principal de PAGOCEL mostrando pago movil" class="pgc-hero-phone"
             width="300" height="600" />
         </div>
       </div>
-      <!-- Badge flotante sobre el telefono -->
-      <div class="pgc-phone-badge pgc-phone-badge--top">
-        <svg viewBox="0 0 14 14" fill="none">
-          <circle cx="7" cy="7" r="6" fill="#4ade80" opacity="0.2" />
-          <circle cx="7" cy="7" r="3" fill="#4ade80" />
-        </svg>
-        Pago confirmado
+
+      <!-- Card derecha conectada: QR para cobros -->
+      <div class="pgc-float pgc-connected-card pgc-connected-card--right">
+        <div class="pgc-fcard">
+          <div class="pgc-fcard-row">
+            <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+              <img src="qr-code-svgrepo-com.svg" alt="" class="pgc-fcard-icon-img" />
+            </span>
+            <span class="pgc-fcard-label"><span style="color: var(--pgc-amber);">QR</span> para cobros</span>
+          </div>
+          <p class="pgc-fcard-amount">$150.00</p>
+          <p class="pgc-fcard-sub">Recibido hoy<br>Banco del Austro</p>
+        </div>
+        <div class="pgc-connector-line pgc-connector-line--right"></div>
       </div>
-      <div class="pgc-phone-badge pgc-phone-badge--bot">
-        <svg viewBox="0 0 14 14" fill="none">
-          <path d="M2 7h10M8 3l4 4-4 4" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-        Interbancario
-      </div>
+
     </div>
 
   </div>
@@ -222,7 +155,7 @@
               <path d="M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-            Interbancario
+            Transacciones Interbancarias
           </div>
 
           <div class="pgc-sec-float pgc-sec-float--01">
