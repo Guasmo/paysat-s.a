@@ -26,19 +26,14 @@ export class Seguridad implements AfterViewInit, OnDestroy {
 
     this.ctx = gsap.context(() => {
 
-      // Hero floating cards — elastic entrance
-      const heroFloats = this.el.nativeElement.querySelectorAll('.seg-float');
-      gsap.fromTo(heroFloats,
-        { opacity: 0, scale: 0.3 },
-        { opacity: 1, scale: 1, duration: 1, ease: 'elastic.out(1, 0.55)', stagger: 0.15, delay: 0.3 }
-      );
-
       // Hero text + visual
       const heroText = this.el.nativeElement.querySelector('.seg-hero-text');
       const heroVisual = this.el.nativeElement.querySelector('.seg-hero-visual');
+      const capBar = this.el.nativeElement.querySelector('.seg-capabilities-bar');
 
       gsap.fromTo(heroText, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: 'back.out(1.4)', delay: 0.1 });
       gsap.fromTo(heroVisual, { opacity: 0, y: 50, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'back.out(1.5)', delay: 0.2 });
+      gsap.fromTo(capBar, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.3)', delay: 0.4 });
 
       // Feature cards — scroll-triggered
       gsap.fromTo(
