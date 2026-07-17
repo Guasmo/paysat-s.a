@@ -28,12 +28,12 @@
 .sol-hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1640px;
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.85fr 1.2fr;
+  gap: 2.5rem;
   align-items: center;
 }
 
@@ -106,89 +106,105 @@
   align-items: center;
 }
 
-.sol-visual-stack {
+/* Contenedor que centra la laptop y ancla el anillo + las cards.
+   Ancho y alto distintos para que el anillo se adapte a la proporcion
+   panoramica de la laptop (el SVG cuadrado se estira y queda como elipse). */
+.sol-orbit-wrap {
   position: relative;
-  width: 320px;
-  height: 360px;
-}
-
-.sol-visual-card {
-  position: absolute;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 18px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 900px;
+  height: 640px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  justify-content: center;
 }
 
-.sol-visual-card:hover {
-  transform: translateY(-6px);
+/* ── Anillo orbital: relleno transparente, el "borde" es un patron de puntos
+   que recorre la circunferencia en loop (mismo principio que el conector
+   animado de PAGOCEL, aplicado a un circulo completo). ── */
+.sol-orbit-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-.sol-visual-card svg {
-  width: 56px;
-  height: 56px;
-  color: var(--color-primary-navy);
+.sol-orbit-track {
+  fill: none;
+  stroke: rgba(245, 158, 11, 0.22);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 7;
 }
 
-.sol-visual-card span {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-primary-navy);
-  letter-spacing: -0.01em;
+.sol-orbit-dots {
+  fill: none;
+  stroke: #F59E0B;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 4 96;
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.65));
+  animation: sol-orbit-spin 7s linear infinite;
 }
 
-.sol-visual-card--1 {
-  top: 0;
-  left: 10%;
-  z-index: 3;
-  animation: sol-float 4s ease-in-out infinite;
+@keyframes sol-orbit-spin {
+  to {
+    stroke-dashoffset: -100;
+  }
 }
 
-.sol-visual-card--2 {
-  top: 30%;
-  right: 0;
+@media (prefers-reduced-motion: reduce) {
+  .sol-orbit-dots {
+    animation: none;
+  }
+}
+
+/* ── Laptop mockup: imagen real (public/laptop.png) ── */
+.sol-laptop {
+  position: relative;
   z-index: 2;
-  animation: sol-float 4s ease-in-out 1s infinite;
+  width: 100%;
+  max-width: 700px;
 }
 
-.sol-visual-card--3 {
-  bottom: 0;
-  left: 5%;
-  z-index: 1;
-  animation: sol-float 4s ease-in-out 2s infinite;
+.sol-laptop-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.55));
 }
 
-/* ── Floating Cards ── */
+/* ── Floating Cards — distribuidas alrededor del anillo ── */
 .sol-float {
   position: absolute;
   z-index: 3;
   pointer-events: none;
 }
 
-.sol-float--tl {
-  top: 6%;
-  left: 3%;
+.sol-float--top {
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sol-float--left {
+  top: 38%;
+  left: -8%;
+}
+
+.sol-float--right {
+  top: 32%;
+  right: -8%;
 }
 
 .sol-float--bl {
-  bottom: 8%;
-  left: 4%;
-}
-
-.sol-float--tr {
-  top: 6%;
-  right: 3%;
+  bottom: 4%;
+  left: 6%;
 }
 
 .sol-float--br {
-  bottom: 8%;
-  right: 4%;
+  bottom: 4%;
+  right: 6%;
 }
 
 .sol-float-loop {
@@ -196,10 +212,25 @@
   animation: sol-float 4s ease-in-out infinite;
 }
 
-.sol-float--tl .sol-float-loop { animation-delay: 0s; }
-.sol-float--bl .sol-float-loop { animation-delay: 0.8s; }
-.sol-float--tr .sol-float-loop { animation-delay: 1.6s; }
-.sol-float--br .sol-float-loop { animation-delay: 2.4s; }
+.sol-float--top .sol-float-loop {
+  animation-delay: 0s;
+}
+
+.sol-float--left .sol-float-loop {
+  animation-delay: 0.6s;
+}
+
+.sol-float--right .sol-float-loop {
+  animation-delay: 1.2s;
+}
+
+.sol-float--bl .sol-float-loop {
+  animation-delay: 1.8s;
+}
+
+.sol-float--br .sol-float-loop {
+  animation-delay: 2.4s;
+}
 
 .sol-fcard {
   background: var(--color-bg-alt);
@@ -250,6 +281,33 @@
 .sol-fcard-icon--amber {
   background: rgba(245, 158, 11, 0.08);
   color: #F59E0B;
+}
+
+/* ── Tema blanco y negro para las cards del anillo orbital ──
+   Fondo blanco solido, icono y texto en negro/gris oscuro para contraste. */
+.sol-fcard--mono {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.sol-fcard-icon--mono {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+}
+
+.sol-fcard--mono .sol-fcard-val {
+  color: #0f172a;
+}
+
+.sol-fcard--mono .sol-fcard-label {
+  color: #F59E0B;
+  font-weight: 700;
+}
+
+.sol-fcard--mono .sol-fcard-sub {
+  color: #64748b;
 }
 
 .sol-fcard-val {
@@ -367,7 +425,7 @@
 }
 
 .sol-btn-ghost:hover {
-  border-color: rgba(255,255,255,0.25);
+  border-color: rgba(255, 255, 255, 0.25);
   color: var(--color-primary-navy);
 }
 
@@ -447,8 +505,8 @@
   justify-content: flex-end;
   gap: 0.75rem;
   opacity: 0;
-  transition: transform 400ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 400ms cubic-bezier(0.32, 0.72, 0, 1);
-  cursor: default;
+  transition: transform 400ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 400ms cubic-bezier(0.32, 0.72, 0, 1), border-color 300ms ease, background-color 300ms ease;
+  cursor: pointer;
   /* overflow is visible so the ribbon can stick out */
 }
 
@@ -471,8 +529,15 @@
 /* Removed Abstract Mesh Backgrounds */
 
 .solution-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(245, 158, 11, 0.15), 0 0 24px rgba(245, 158, 11, 0.18);
+}
+
+.solution-card:hover .card-icon {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
 }
 
 /* Featured card spans 2 columns */
@@ -606,6 +671,12 @@
   .sol-float {
     display: none;
   }
+
+  .sol-orbit-wrap {
+    width: 100%;
+    max-width: 560px;
+    height: 400px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -634,22 +705,14 @@
     order: -1;
   }
 
-  .sol-visual-stack {
-    width: 260px;
+  .sol-orbit-wrap {
+    width: 100%;
+    max-width: 420px;
     height: 300px;
   }
 
-  .sol-visual-card {
-    padding: 1rem;
-  }
-
-  .sol-visual-card svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .sol-visual-card span {
-    font-size: 0.75rem;
+  .sol-laptop {
+    max-width: 340px;
   }
 
   .solutions-grid {
@@ -666,9 +729,14 @@
     padding: 4rem 1.25rem 2.5rem;
   }
 
-  .sol-visual-stack {
-    width: 220px;
-    height: 260px;
+  .sol-orbit-wrap {
+    width: 100%;
+    max-width: 320px;
+    height: 230px;
+  }
+
+  .sol-laptop {
+    max-width: 260px;
   }
 
   .solutions-grid {
