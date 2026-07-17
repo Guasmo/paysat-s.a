@@ -1,13 +1,12 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { Contact } from '../../components/contact/contact';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-seguridad',
-  imports: [RouterLink, Contact],
+  imports: [Contact],
   templateUrl: './seguridad.html',
   styleUrl: './seguridad.css',
 })
@@ -17,7 +16,7 @@ export class Seguridad implements AfterViewInit, OnDestroy {
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) return;

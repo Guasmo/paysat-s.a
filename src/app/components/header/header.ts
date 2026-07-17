@@ -1,12 +1,11 @@
 import { Component, signal, ElementRef, inject, computed } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
-import { NgOptimizedImage } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, NgOptimizedImage],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css',
   host: {
@@ -16,9 +15,9 @@ import { filter } from 'rxjs/operators';
 export class Header {
   isScrolled = signal(false);
   activeSection = signal<string>('inicio');
-  
+
   private router = inject(Router);
-  
+
   currentUrl = signal<string>('/');
   isHomePage = computed(() => {
     const path = this.currentUrl().split('#')[0].split('?')[0];

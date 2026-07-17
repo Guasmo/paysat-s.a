@@ -2,11 +2,10 @@ import { Component, ElementRef, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } 
 import { isPlatformBrowser } from '@angular/common';
 import { Contact } from '../../components/contact/contact';
 import gsap from 'gsap';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nosotros',
-  imports: [Contact, RouterLink],
+  imports: [Contact],
   templateUrl: './nosotros.html',
   styleUrl: './nosotros.css',
 })
