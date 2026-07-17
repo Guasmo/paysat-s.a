@@ -17,7 +17,7 @@ export class Pagocel implements AfterViewInit, OnDestroy {
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) return;

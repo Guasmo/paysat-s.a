@@ -46,7 +46,6 @@
         <div class="pgc-fcard">
           <div class="pgc-fcard-row">
             <span class="pgc-fcard-icon">
-              <!-- Tienes que darle al botón verde "Descarga gratis" y guardar la imagen aquí -->
               <img src="transferencia-bancaria.png" alt="Transferencia" class="pgc-fcard-icon-img" />
             </span>
             <div style="display: flex; flex-direction: column; justify-content: center;">
@@ -186,9 +185,30 @@
   <section class="pgc-section pgc-section--alt pgc-tl-section" role="listitem" aria-labelledby="sec-qr-heading">
     <div class="pgc-tl-node" aria-hidden="true">
     </div>
-    <div class="pgc-sec-inner pgc-sec-inner--rev">
+    <div class="pgc-sec-inner pgc-sec-inner--rev pgc-qr-align-top">
 
-      <div class="pgc-sec-visual">
+      <div class="pgc-sec-visual pgc-qr-visual">
+
+        <!-- Card izquierda conectada: QR Estatico -> boton "Recibir pagos" -->
+        <div class="pgc-qr-card pgc-qr-card--left pgc-sec-float" role="listitem">
+          <div class="pgc-fcard">
+            <div class="pgc-fcard-row">
+              <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+                <img src="qr-code-svgrepo-com.svg" alt="" class="pgc-fcard-icon-img" />
+              </span>
+              <span class="pgc-fcard-label"><span style="color: var(--pgc-amber);">Estático</span></span>
+            </div>
+            <h3 class="pgc-qr-card-title">Código permanente para cobrar siempre.</h3>
+            <p class="pgc-fcard-sub">El pagador ingresa el monto. Ideal para negocios y puntos de cobro fijos.</p>
+          </div>
+          <svg class="pgc-qr-connector-svg pgc-qr-connector-svg--left" viewBox="0 0 100 40" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path class="pgc-qr-connector-track" d="M0,6 C 35,6 65,30 100,32" />
+            <path class="pgc-qr-connector-flow" d="M0,6 C 35,6 65,30 100,32" />
+            <circle class="pgc-qr-connector-dot" cx="100" cy="32" r="2.6" />
+          </svg>
+        </div>
+
         <!-- Telefono -->
         <div class="pgc-sec-phone-wrap" aria-hidden="true">
           <div class="pgc-sec-badge pgc-sec-badge--amber">
@@ -201,64 +221,41 @@
             Escanear QR
           </div>
 
-          <div class="pgc-sec-float pgc-sec-float--02">
-            <div class="pgc-fcard">
-              <div class="pgc-fcard-row">
-                <span class="pgc-fcard-icon pgc-fcard-icon--amber">
-                  <svg viewBox="0 0 18 18" fill="none">
-                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" />
-                  </svg>
-                </span>
-                <span class="pgc-fcard-label">QR con monto de:</span>
-              </div>
-              <p class="pgc-fcard-amount pgc-fcard-amount--amber">$25.50</p>
-              <p class="pgc-fcard-sub">Estatico + dinamico</p>
-            </div>
-          </div>
-
-          <img src="mockup-5.png" alt="Escaner QR de PAGOCEL" class="pgc-sec-phone" width="240" height="480" />
+          <img src="mockup-5.png" alt="Escaner QR de PAGOCEL" class="pgc-sec-phone" width="260" height="520" />
         </div>
-      </div>
 
+        <!-- Card derecha conectada: QR Dinamico -> boton "QR para cobros" -->
+        <div class="pgc-qr-card pgc-qr-card--right pgc-sec-float" role="listitem">
+          <div class="pgc-fcard pgc-fcard--amber">
+            <div class="pgc-fcard-row">
+              <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+                <img src="qr-code-svgrepo-com.svg" alt="" class="pgc-fcard-icon-img" />
+              </span>
+              <span class="pgc-fcard-label" style="color: var(--pgc-amber);"><span>Dinámico</span></span>
+            </div>
+            <h3 class="pgc-qr-card-title">Genera un QR con el monto que deseas cobrar.</h3>
+            <p class="pgc-fcard-sub">El cliente solo escanea y confirma. Sin errores, sin cambios en el monto.</p>
+          </div>
+          <svg class="pgc-qr-connector-svg pgc-qr-connector-svg--right" viewBox="0 0 100 40" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path class="pgc-qr-connector-track" d="M100,6 C 65,6 35,30 0,32" />
+            <path class="pgc-qr-connector-flow" d="M100,6 C 65,6 35,30 0,32" />
+            <circle class="pgc-qr-connector-dot" cx="0" cy="32" r="2.6" />
+          </svg>
+        </div>
+
+      </div>
       <div class="pgc-sec-info">
         <div class="pgc-sec-header">
-          <h2 id="sec-qr-heading">QR que se adapta<br>a tu operaci&oacute;n.</h2>
-          <p>Dos modalidades en una sola plataforma, pensadas para cada tipo de cobro.</p>
+          <h2 id="sec-qr-heading">QR que se adapta<br>a tu operación.</h2>
+          <p>Dos modalidades en una sola plataforma, pensadas para cada flexibilidad de pago para todas las personas.
+          </p>
         </div>
-
-        <!-- Bento QR -->
-        <div class="pgc-qr-bento" role="list" aria-label="Tipos de QR">
-          <article class="pgc-bento-cell" role="listitem">
-            <div class="pgc-bento-pill">QR Est&aacute;tico</div>
-            <h3>C&oacute;digo permanente para cobrar siempre.</h3>
-            <p>El pagador ingresa el monto. Ideal para negocios y puntos de cobro fijos.</p>
-            <div class="pgc-bento-qr-vis" aria-hidden="true">
-              <svg viewBox="0 0 60 60" fill="none">
-                <rect x="3" y="3" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5" />
-                <rect x="7" y="7" width="14" height="14" rx="1" fill="currentColor" fill-opacity="0.18" />
-                <rect x="35" y="3" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5" />
-                <rect x="39" y="7" width="14" height="14" rx="1" fill="currentColor" fill-opacity="0.18" />
-                <rect x="3" y="35" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5" />
-                <rect x="7" y="39" width="14" height="14" rx="1" fill="currentColor" fill-opacity="0.18" />
-                <rect x="35" y="35" width="7" height="7" fill="currentColor" fill-opacity="0.35" />
-                <rect x="48" y="35" width="7" height="7" fill="currentColor" fill-opacity="0.2" />
-                <rect x="35" y="48" width="7" height="7" fill="currentColor" fill-opacity="0.2" />
-                <rect x="48" y="48" width="7" height="7" fill="currentColor" fill-opacity="0.35" />
-              </svg>
-            </div>
-          </article>
-          <article class="pgc-bento-cell pgc-bento-cell--amber" role="listitem">
-            <div class="pgc-bento-pill pgc-bento-pill--amber">QR Din&aacute;mico</div>
-            <h3>Genera un QR con monto fijo.</h3>
-            <p>El cliente solo escanea y confirma. Sin errores, sin cambio.</p>
-            <div class="pgc-bento-amount" aria-hidden="true">
-              <span class="pgc-ba-sym">$</span>
-              <span class="pgc-ba-val">150</span>
-              <span class="pgc-ba-cents">.00</span>
-            </div>
-          </article>
+        <div class="features-actions">
+          <button routerLink="/soluciones" class="feat-btn-primary">Descubrir funciones →</button>
         </div>
       </div>
+
 
     </div>
   </section>
@@ -273,7 +270,7 @@
         <div class="pgc-sec-header">
           <h2 id="sec-core-heading">Conectado al sistema<br>financiero ecuatoriano.</h2>
           <p>
-            PAGOCEL se integra al core bancario de tu instituci&oacute;n via API REST certificada,
+            PAGOCEL se integra al core bancario de tu institución vía API REST certificada,
             habilitando la interoperabilidad completa del sector financiero.
           </p>
         </div>
@@ -281,16 +278,16 @@
         <dl class="pgc-core-dl">
           <div class="pgc-core-item">
             <dt>API REST bidireccional</dt>
-            <dd>Comunicaci&oacute;n directa con el core: consultas, d&eacute;bitos, cr&eacute;ditos y confirmaciones en
+            <dd>Comunicación directa con el core: consultas, débitos, créditos y confirmaciones en
               tiempo real.</dd>
           </div>
           <div class="pgc-core-item">
-            <dt>Soporte multi-instituci&oacute;n</dt>
-            <dd>El usuario vincula cuentas de distintas entidades y elige el origen en cada operaci&oacute;n.</dd>
+            <dt>Soporte multi-institución</dt>
+            <dd>El usuario vincula cuentas de distintas entidades y elige el origen en cada operación.</dd>
           </div>
           <div class="pgc-core-item">
-            <dt>Conciliaci&oacute;n autom&aacute;tica</dt>
-            <dd>Cruce de transacciones sin intervenci&oacute;n manual. Reportes CSV, PDF y Excel por rango de fechas.
+            <dt>Conciliación automática</dt>
+            <dd>Cruce de transacciones sin intervención manual. Reportes CSV, PDF y Excel por rango de fechas.
             </dd>
           </div>
           <div class="pgc-core-item">

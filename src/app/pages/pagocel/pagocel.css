@@ -19,9 +19,9 @@
   --pgc-teal-border: rgba(34, 211, 238, 0.25);
 
   /* Backgrounds — deep navy */
-  --pgc-bg: #0e1726;
+  --pgc-bg: var(--color-bg-alt);
   /* Base, secciones principales */
-  --pgc-bg-alt: #131e30;
+  --pgc-bg-alt: var(--color-bg-light);
   /* Secciones alternadas */
   --pgc-bg-card-light: #1c2a40;
   /* Cards flotantes / fcards (glass dark) */
@@ -259,6 +259,124 @@
   box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
 }
 
+/* ── Cards conectadas — Seccion QR (mismo patron del Hero, adaptado con conector en escuadra) ──
+   Las cards ahora quedan a la altura del codigo QR (mas arriba que los botones
+   reales del mockup), asi que el conector ya no es una linea recta: sale de la
+   card, viaja hacia el telefono y dobla hacia abajo hasta la altura real del
+   boton correspondiente ("Recibir pagos" / "QR para cobros").
+── */
+.pgc-qr-visual {
+  position: relative;
+}
+
+/* El header de esta seccion quedaba centrado verticalmente contra todo el alto
+   del telefono (align-items:center del grid .pgc-sec-inner). Esta clase lo
+   ancla arriba, a la altura del telefono, en vez de centrarlo. */
+.pgc-qr-align-top {
+  align-items: flex-start;
+}
+
+.pgc-qr-card {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  width: 260px;
+  pointer-events: auto;
+}
+
+/* Cards a la altura del codigo QR (mas arriba que los botones reales) */
+.pgc-qr-card--left {
+  right: calc(50% + 175px + 20px);
+  top: 47%;
+}
+
+.pgc-qr-card--right {
+  left: calc(50% + 175px + 20px);
+  top: 47%;
+}
+
+.pgc-qr-card .pgc-fcard {
+  width: 100%;
+  min-width: unset;
+  max-width: unset;
+  gap: 0.6rem;
+}
+
+.pgc-qr-card-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* ── Conector animado — ambas cards de QR (Estatico y Dinamico) ──
+   Un trazo dashed no se puede animar en flujo con solo bordes CSS (el border-box
+   que se usaba antes), asi que ambos conectores son SVG: un trazo base punteado
+   fijo + un tramo corto y brillante que recorre el camino en loop
+   (stroke-dasharray + stroke-dashoffset) para el efecto de "recorrido".
+── */
+.pgc-qr-connector-svg {
+  position: absolute;
+  z-index: 4;
+  width: 95px;
+  height: 38px;
+  bottom: 16px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.pgc-qr-connector-svg--left {
+  left: 100%;
+}
+
+.pgc-qr-connector-svg--right {
+  right: 100%;
+}
+
+/* Trazo base: la linea punteada de siempre, mas gruesa que antes */
+.pgc-qr-connector-track {
+  fill: none;
+  stroke: var(--pgc-amber);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 5 6;
+  opacity: 0.5;
+}
+
+/* Trazo "vivo": un tramo corto y brillante que recorre todo el camino en loop */
+.pgc-qr-connector-flow {
+  fill: none;
+  stroke: var(--pgc-amber-hover);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 14 160;
+  filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.85));
+  animation: pgc-qr-flow 2.2s linear infinite;
+}
+
+.pgc-qr-connector-dot {
+  fill: var(--pgc-amber);
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.7));
+}
+
+@keyframes pgc-qr-flow {
+  from {
+    stroke-dashoffset: 174;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pgc-qr-connector-flow {
+    animation: none;
+  }
+}
+
 /* Inline bottom cards */
 .pgc-hero-bottom-cards {
   display: flex;
@@ -311,7 +429,7 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
   padding: 1.1rem;
-  min-width: 180px;
+  min-width: 200px;
   max-width: 250px;
   display: flex;
   flex-direction: column;
@@ -326,8 +444,8 @@
 }
 
 .pgc-fcard-label {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 800;
   color: black;
   flex: 1;
 }
@@ -347,15 +465,24 @@
   height: 15px;
 }
 
-.pgc-fcard-icon-img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+.pgc-qr-card .pgc-fcard-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.pgc-qr-card .pgc-fcard-icon svg {
+  width: 40px;
+  height: 40px;
 }
 
 .pgc-fcard-icon--teal {
   background: var(--pgc-teal-dim);
   color: var(--pgc-teal);
+}
+
+.pgc-fcard--amber {
+  background: #fffcf5;
+  border-color: rgba(245, 158, 11, 0.2);
 }
 
 .pgc-fcard-amount {
@@ -507,6 +634,35 @@
   background: linear-gradient(to bottom, transparent, var(--pgc-timeline-line) 8%, var(--pgc-timeline-line) 92%, transparent);
 }
 
+.features-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.feat-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--pgc-amber);
+  color: #17140d;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.feat-btn-primary:hover {
+  background-color: #FBBF24;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
 /* ─────────────────────────────────────────────
    SECTIONS (Scroll)
 ───────────────────────────────────────────────  */
@@ -563,6 +719,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: -20rem;
 }
 
 .pgc-sec-header h2 {
@@ -738,19 +895,16 @@
   display: inline-flex;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: 700;
+  color: var(--pgc-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: var(--pgc-teal-dim);
-  color: var(--pgc-teal);
-  border: 1px solid var(--pgc-teal-border);
   margin-bottom: 0.75rem;
 }
 
 .pgc-bento-pill--amber {
-  background: var(--pgc-amber-dim);
-  border-color: var(--pgc-amber-border);
+  color: var(--pgc-amber);
 }
 
 .pgc-bento-cell h3 {
@@ -887,6 +1041,26 @@
 
   .pgc-sec-inner {
     gap: 2rem;
+  }
+
+  /* Las cards de QR sí llevan texto real (no son decorativas como el resto de
+     .pgc-sec-float), así que en vez de ocultarlas las apilamos arriba/abajo del telefono */
+  .pgc-qr-card {
+    display: flex;
+    position: static;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .pgc-qr-visual {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .pgc-qr-connector-svg {
+    display: none;
   }
 }
 
