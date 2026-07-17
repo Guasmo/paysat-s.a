@@ -13,7 +13,6 @@ import { Recursos } from './pages/recursos/recursos';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'services', component: Services },
   { path: 'soluciones', component: Services },
   { path: 'nosotros', component: Nosotros },
   { path: 'pagocel', component: Pagocel },
