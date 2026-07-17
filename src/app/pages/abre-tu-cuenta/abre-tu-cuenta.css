@@ -4,7 +4,6 @@
   justify-content: flex-start;
   padding: 6rem 2rem;
   background-color: var(--color-bg-light);
-  min-height: 80vh;
   overflow: hidden;
 }
 
@@ -14,7 +13,7 @@
   right: 0;
   width: 45%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.04) 100%);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.04) 100%);
   clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 0;
 }
@@ -48,13 +47,14 @@
 }
 
 .open-account__card {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: var(--color-bg-alt);
   border-radius: 18px;
-  padding: 2rem 0 2rem 2.5rem;
+  padding: 2rem 150px 2rem 2.5rem;
   text-align: left;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
   border: 1px solid var(--color-border);
   overflow: hidden;
@@ -62,6 +62,7 @@
 
 .open-account__card-text {
   flex: 1;
+  min-width: 0;
 }
 
 .open-account__card-title {
@@ -80,18 +81,17 @@
 
 .open-account__phone {
   position: absolute;
-  top: 50%;
-  right: -80px;
-  transform: translateY(-50%);
-  width: 160px;
-  height: 160px;
-  overflow: hidden;
+  right: 2rem;
+  top: 1.25rem;
+  width: 130px;
+  pointer-events: none;
 }
 
 .open-account__phone-img {
-  width: 160px;
+  width: 100%;
   height: auto;
   display: block;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
 }
 
 .open-account__stores {
@@ -129,6 +129,13 @@
     flex-direction: column;
     text-align: center;
     padding: 2rem;
+    overflow: visible;
+  }
+
+  .open-account__phone {
+    position: static;
+    margin-top: 0.5rem;
+    width: 130px;
   }
 
   .open-account__stores {
