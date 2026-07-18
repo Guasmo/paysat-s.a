@@ -151,6 +151,14 @@
   min-height: 480px;
 }
 
+/* Contenedor de la imagen (mapa + edificio) */
+.nos-visual-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .nos-visual-stack {
   position: relative;
   width: 100%;
@@ -162,7 +170,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: clamp(280px, 42vw, 600px);
   height: auto;
   z-index: 2;
 }
@@ -172,9 +180,32 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
+  width: clamp(380px, 56vw, 800px);
   height: auto;
   z-index: 1;
+}
+
+/* Fade al final de la imagen: transicion suave hacia el fondo (solo visible en mobile,
+   cuando la imagen queda arriba y el texto abajo, para evitar el corte seco) */
+.nos-visual-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 0;
+  background: linear-gradient(to bottom, transparent 0%, var(--color-bg-light) 100%);
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Contenedor de las cards: en desktop se superpone a la imagen (flotantes) */
+.nos-visual-cards {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
 }
 
 /* ── Floating Cards ── */
@@ -205,8 +236,8 @@
 }
 
 .nos-fcard {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 14px;
   padding: 1rem;
   min-width: 160px;
@@ -214,7 +245,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  box-shadow: 0 8px 32px rgba(10, 25, 47, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
 }
 
 .nos-fcard-row {
@@ -226,7 +257,7 @@
 .nos-fcard-label {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--color-primary-navy);
+  color: #F59E0B;
   flex: 1;
 }
 
@@ -257,7 +288,7 @@
 
 .nos-fcard-sub {
   font-size: 0.72rem;
-  color: var(--color-text-muted);
+  color: #64748b;
   margin: 0;
   line-height: 1.4;
 }
@@ -266,7 +297,7 @@
   font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: var(--color-primary-navy);
+  color: #0f172a;
   margin: 0;
   line-height: 1;
 }
@@ -534,13 +565,15 @@
    A QUIEN SERVIMOS — Cards
 ═══════════════════════════════════════════════ */
 .nos-clients {
-  padding: 5rem 2rem;
+  padding: 5rem 0;
   background: var(--color-bg-light);
+  overflow: hidden;
 }
 
 .nos-clients-inner {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .nos-clients-title {
@@ -552,10 +585,26 @@
   text-align: center;
 }
 
-.nos-clients-grid {
+/* ── Grid en desktop / tablet — el carrusel infinito se activa solo en mobile ── */
+.nos-clients-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.nos-clients-track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+  max-width: 1200px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 2rem;
+  animation: none;
+}
+
+/* El set duplicado (para el loop) solo se muestra en mobile */
+.nos-client-card[aria-hidden="true"] {
+  display: none;
 }
 
 .nos-client-card {
@@ -568,6 +617,8 @@
   align-items: center;
   text-align: center;
   gap: 0.75rem;
+  flex: 0 0 280px;
+  width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -682,40 +733,109 @@
 ═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .nos-hero {
-    padding: 4rem 1.5rem;
+    padding: 1.5rem 1.25rem 2.5rem;
+    min-height: auto;
   }
 
   .nos-hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 0.5rem;
   }
 
   .nos-hero-text {
     align-items: center;
     padding-left: 0;
+    gap: 0.85rem;
+  }
+
+  .nos-hero-h1 {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
   }
 
   .nos-hero-visual {
     order: -1;
+    min-height: auto;
+    display: block;
+  }
+
+  /* Contenedor relativo que ancla imagen + cards flotantes alrededor del edificio */
+  .nos-visual-image {
+    position: relative;
+    inset: auto;
+  }
+
+  .nos-visual-stack {
+    height: 400px;
   }
 
   .nos-building {
-    width: 280px;
+    width: clamp(260px, 60vw, 360px);
+  }
+
+  .nos-world-map {
+    width: clamp(380px, 92vw, 520px);
+  }
+
+  .nos-visual-fade {
+    height: 90px;
+    opacity: 1;
+  }
+
+  /* Las cards se quedan flotando sobre la imagen (igual que en desktop), solo
+     se reposicionan y se achican para que quepan alrededor del edificio */
+  .nos-visual-cards {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .nos-float {
+    pointer-events: auto;
   }
 
   .nos-float--tl {
-    top: 0;
+    top: 2%;
     left: 0;
   }
 
   .nos-float--tr {
-    top: 0;
+    top: 2%;
     right: 0;
   }
 
   .nos-float--br {
-    bottom: 0;
-    right: 0;
+    bottom: 2%;
+    right: 2%;
+  }
+
+  .nos-fcard {
+    min-width: 0;
+    max-width: 128px;
+    padding: 0.65rem;
+    gap: 0.3rem;
+    border-radius: 10px;
+  }
+
+  .nos-fcard-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+  }
+
+  .nos-fcard-icon svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .nos-fcard-label {
+    font-size: 0.62rem;
+    line-height: 1.25;
+  }
+
+  .nos-fcard-sub {
+    font-size: 0.6rem;
+    line-height: 1.3;
   }
 
   .nos-features-inner {
@@ -746,21 +866,126 @@
     padding: 2rem 1.5rem;
   }
 
-  .nos-clients-grid {
-    grid-template-columns: repeat(2, 1fr);
+  /* ── Carrusel infinito: activo solo en mobile ── */
+  .nos-clients-carousel {
+    overflow: hidden;
+    cursor: grab;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  }
+
+  .nos-clients-carousel.is-dragging {
+    cursor: grabbing;
+  }
+
+  .nos-clients-carousel.is-dragging .nos-clients-track {
+    user-select: none;
+  }
+
+  .nos-clients-carousel::before,
+  .nos-clients-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(40px, 12vw, 100px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .nos-clients-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-light) 0%, transparent 100%);
+  }
+
+  .nos-clients-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-light) 0%, transparent 100%);
+  }
+
+  .nos-clients-track {
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    will-change: transform;
+    animation: nos-clients-scroll 26s linear infinite;
+  }
+
+  @keyframes nos-clients-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      /* Se mueve exactamente el ancho de un set (50% del track, que tiene 2 sets) */
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+
+  .nos-client-card[aria-hidden="true"] {
+    display: flex;
+  }
+
+  .nos-client-card {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+  .nos-clients-track {
+    animation: none;
   }
 }
 
 @media (max-width: 600px) {
+  .nos-hero {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .nos-visual-stack {
+    height: 320px;
+  }
+
+  .nos-building {
+    width: clamp(220px, 68vw, 280px);
+  }
+
+  .nos-world-map {
+    width: clamp(320px, 100vw, 400px);
+  }
+
+  .nos-fcard {
+    max-width: 108px;
+    padding: 0.5rem;
+  }
+
+  .nos-fcard-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nos-fcard-icon svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .nos-fcard-label {
+    font-size: 0.56rem;
+  }
+
+  .nos-fcard-sub {
+    font-size: 0.54rem;
+  }
+
   .nos-features-inner {
     grid-template-columns: 1fr;
   }
 
-  .nos-clients-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nos-float {
-    display: none;
+  .nos-client-card {
+    flex: 0 0 200px;
+    width: 200px;
+    padding: 1.75rem 1.25rem;
   }
 }

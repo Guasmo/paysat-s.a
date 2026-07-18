@@ -26,11 +26,18 @@
 
     <!-- Building image + floating cards -->
     <div class="nos-hero-visual" aria-hidden="true">
-      <div class="nos-visual-stack">
-        <img src="world.png" alt="" class="nos-world-map" />
-        <img src="edificiotemporal.png" alt="Edificio PAYSAT" class="nos-building" width="520" height="400" />
 
-        <!-- Floating cards -->
+      <!-- Imagen (mapa + edificio) -->
+      <div class="nos-visual-image">
+        <div class="nos-visual-stack">
+          <img src="world.png" alt="" class="nos-world-map" />
+          <img src="edificiotemporal.png" alt="Edificio PAYSAT" class="nos-building" width="520" height="400" />
+        </div>
+        <div class="nos-visual-fade"></div>
+      </div>
+
+      <!-- Cards: flotantes en desktop, apiladas en mobile -->
+      <div class="nos-visual-cards">
         <div class="nos-float nos-float--tl">
           <div class="nos-fcard">
             <div class="nos-fcard-row">
@@ -80,6 +87,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
   </div>
@@ -132,8 +140,12 @@
 <section class="nos-clients" aria-labelledby="clients-heading">
   <div class="nos-clients-inner">
     <h2 id="clients-heading" class="nos-clients-title">A qui&eacute;n servimos</h2>
-    <div class="nos-clients-grid">
+  </div>
 
+  <div class="nos-clients-carousel">
+    <div class="nos-clients-track">
+
+      <!-- Set 1 -->
       <div class="nos-client-card">
         <div class="nos-client-icon-wrap">
           <div class="nos-client-icon-circle">
@@ -173,6 +185,57 @@
       </div>
 
       <div class="nos-client-card">
+        <div class="nos-client-icon-wrap">
+          <div class="nos-client-icon-circle">
+            <img src="online-banking.png" alt="" class="nos-client-svg" />
+          </div>
+          <span class="nos-client-arc"></span>
+        </div>
+        <h3>Fintech e instituciones emergentes</h3>
+        <div class="nos-client-divider"></div>
+        <p>APIs y servicios listos para acelerar la innovacion y lanzar nuevos productos al mercado.</p>
+      </div>
+
+      <!-- Set 2 (duplicado, para el loop infinito sin corte) -->
+      <div class="nos-client-card" aria-hidden="true">
+        <div class="nos-client-icon-wrap">
+          <div class="nos-client-icon-circle">
+            <img src="bank-architecture-and-city-svgrepo-com.svg" alt="" class="nos-client-svg" />
+          </div>
+          <span class="nos-client-arc"></span>
+        </div>
+        <h3>Bancos</h3>
+        <div class="nos-client-divider"></div>
+        <p>Soluciones integrales para optimizar operaciones, mejorar la experiencia del cliente y generar nuevos
+          ingresos.</p>
+      </div>
+
+      <div class="nos-client-card" aria-hidden="true">
+        <div class="nos-client-icon-wrap">
+          <div class="nos-client-icon-circle">
+            <img src="handshake-svgrepo-com.svg" alt="" class="nos-client-svg" />
+          </div>
+          <span class="nos-client-arc"></span>
+        </div>
+        <h3>Cooperativas de ahorro y cr&eacute;dito</h3>
+        <div class="nos-client-divider"></div>
+        <p>Tecnologia que impulsa la inclusion financiera, fortalece la relacion con los socios y aumenta la eficiencia
+          operativa.</p>
+      </div>
+
+      <div class="nos-client-card" aria-hidden="true">
+        <div class="nos-client-icon-wrap">
+          <div class="nos-client-icon-circle">
+            <img src="bank-safe-box-svgrepo-com.svg" alt="" class="nos-client-svg" />
+          </div>
+          <span class="nos-client-arc"></span>
+        </div>
+        <h3>Mutualistas y cajas de ahorro</h3>
+        <div class="nos-client-divider"></div>
+        <p>Plataformas flexibles y seguras que se adaptan a su modelo de negocio y necesidades de crecimiento.</p>
+      </div>
+
+      <div class="nos-client-card" aria-hidden="true">
         <div class="nos-client-icon-wrap">
           <div class="nos-client-icon-circle">
             <img src="online-banking.png" alt="" class="nos-client-svg" />
