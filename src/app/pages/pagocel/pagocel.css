@@ -475,9 +475,31 @@
   height: 40px;
 }
 
+/* FIX: los <img> de icono (transferencia-bancaria.png, qr-code-svgrepo-com.svg)
+   no tenían regla propia — sin esto el navegador los pinta a su tamaño natural
+   (a veces cientos de px) en vez de encajar dentro de la caja del icono. */
+.pgc-fcard-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.pgc-qr-card .pgc-fcard-icon-img {
+  width: 40px;
+  height: 40px;
+}
+
 .pgc-fcard-icon--teal {
   background: var(--pgc-teal-dim);
   color: var(--pgc-teal);
+}
+
+/* FIX: faltaba esta variante — el HTML la usa (icono QR, hero y sección QR)
+   pero solo existía --teal, así que esos iconos quedaban sin fondo/color. */
+.pgc-fcard-icon--amber {
+  background: var(--pgc-amber-dim);
+  color: var(--pgc-amber);
 }
 
 .pgc-fcard--amber {
@@ -1088,6 +1110,44 @@
 
   .pgc-hero-visual {
     order: -1;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* Reactivamos las cards del hero (Transferencia / QR) en vez de ocultarlas:
+     se apilan arriba y abajo del teléfono, centradas, sin la línea conectora
+     (que solo tiene sentido cuando la card está pegada al lateral del telefono) */
+  .pgc-phone-shell {
+    order: 1;
+  }
+
+  .pgc-connected-card {
+    display: flex;
+    position: static;
+    justify-content: center;
+    width: 100%;
+    transform: none;
+  }
+
+  .pgc-connected-card--left {
+    order: 2;
+  }
+
+  .pgc-connected-card--right {
+    order: 3;
+  }
+
+  .pgc-connector-line {
+    display: none;
+  }
+
+  /* FIX CRÍTICO: este -20rem está pensado para el layout de 2 columnas de
+     escritorio (compensa la altura de la columna visual). En mobile, con
+     todo apilado en 1 columna, ese margen negativo gigante arrastra el
+     título/párrafo de cada sección encima de la sección anterior — es la
+     causa del "todo encimado" en las 4 capturas. */
+  .pgc-sec-header {
+    margin-top: 0;
   }
 
   .pgc-timeline::before {
