@@ -1,5 +1,5 @@
 .features-section {
-    padding: 6rem 0;
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
     background-color: var(--color-bg-light);
     /* Lighter background for the new section */
     margin: -2rem -2rem 0 -2rem;
@@ -13,10 +13,10 @@
 .features-container {
     max-width: 1250px;
     width: 100%;
-    padding: 0 5rem;
+    padding: 0 clamp(1.25rem, 5vw, 5rem);
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: clamp(2rem, 5vw, 4rem);
 }
 
 .features-text {
@@ -25,7 +25,7 @@
 }
 
 .features-text h2 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     letter-spacing: -0.04em;
     margin-bottom: 1rem;
     color: var(--color-primary-navy);
@@ -35,7 +35,7 @@
 }
 
 .features-text p {
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--color-text-muted);
     max-width: 500px;
     line-height: 1.6;
@@ -51,12 +51,13 @@
 }
 
 .feat-btn-primary {
-    padding: 0.8rem 1.5rem;
+    padding: clamp(0.7rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
     background-color: var(--pgc-amber);
     color: #17140d;
     border: none;
     border-radius: 8px;
     font-weight: 700;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
@@ -71,7 +72,7 @@
 .features-visuals {
     flex: 1;
     position: relative;
-    height: 600px;
+    height: clamp(420px, 45vw, 600px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +112,7 @@
 
 /* Mockup 5 - Back Right - "un poquito inclinado" */
 .visual-comp-1 {
-    width: 300px;
+    width: clamp(180px, 22vw, 300px);
     top: 15%;
     left: 50%;
     z-index: 2;
@@ -125,7 +126,7 @@
 
 /* Mockup 9 - Back Left - "los de arriba tiene una rotacion para adentro" */
 .visual-comp-2 {
-    width: 220px;
+    width: clamp(140px, 16vw, 220px);
     top: 5%;
     right: 50%;
     z-index: 1;
@@ -139,7 +140,7 @@
 
 /* Mockup 7 - Middle Left - "uno volteado" / "para adentro" */
 .visual-second {
-    width: 260px;
+    width: clamp(170px, 19vw, 260px);
     top: 20%;
     right: 35%;
     z-index: 3;
@@ -152,7 +153,7 @@
 
 /* Mockup 8 - Front Main - "la mas importante" */
 .visual-main {
-    width: 290px;
+    width: clamp(190px, 21vw, 290px);
     top: 30%;
     right: 15%;
     z-index: 4;
@@ -281,7 +282,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
     .features-container {
         flex-direction: column;
         text-align: center;
@@ -297,9 +298,9 @@
 
     .features-visuals {
         width: 100%;
-        height: 500px;
+        height: clamp(380px, 60vw, 500px);
         bottom: 3rem;
-        margin-bottom: 20rem;
+        margin-bottom: clamp(6rem, 25vw, 20rem);
     }
 
     /* Reset absolute positions to center cluster for mobile */

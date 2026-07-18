@@ -2,11 +2,11 @@
   position: relative;
   background-color: var(--color-primary-navy);
   color: #fff;
-  padding: 10rem 2rem;
+  padding: clamp(4rem, 12vh, 10rem) clamp(1.25rem, 5vw, 2rem);
   overflow: hidden;
   display: flex;
   justify-content: center;
-  min-height: 80vh;
+  min-height: clamp(560px, 80vh, 900px);
   align-items: center;
 }
 
@@ -55,16 +55,16 @@
 }
 
 .hero-text h1 {
-  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-size: clamp(1.9rem, 7vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
   color: var(--color-primary-navy);
 }
 
 .hero-text p {
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 3vw, 1.35rem);
   color: #e2e8f0;
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -76,7 +76,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem;
+  gap: clamp(0.4rem, 1.5vw, 0.6rem);
   margin-bottom: 0.5rem;
 }
 
@@ -84,11 +84,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.85rem;
+  padding: clamp(0.3rem, 1vw, 0.4rem) clamp(0.6rem, 2vw, 0.85rem);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: clamp(0.7rem, 1.8vw, 0.78rem);
   font-weight: 600;
   color: #e2e8f0;
   white-space: nowrap;
@@ -107,12 +107,12 @@
 }
 
 .primary-btn {
-  padding: 1.2rem 2.5rem;
+  padding: clamp(0.9rem, 3vw, 1.2rem) clamp(1.5rem, 5vw, 2.5rem);
   background-color: var(--pgc-amber);
   color: #17140d;
   border: none;
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
