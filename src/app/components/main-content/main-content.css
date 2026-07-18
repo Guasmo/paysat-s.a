@@ -20,31 +20,3 @@
     animation: none !important;
   }
 }
-
-@media (max-width: 900px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 900px) {
-  .why-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .why-visual {
-    order: -1;
-  }
-
-  .why-img {
-    max-width: 300px;
-  }
-}
