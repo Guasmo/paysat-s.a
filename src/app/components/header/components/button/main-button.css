@@ -10,6 +10,7 @@
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .cta-btn:hover {
@@ -18,7 +19,7 @@
     background-color: #FBBF24;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
     .cta-btn {
         display: none;
     }
