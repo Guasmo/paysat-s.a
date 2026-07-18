@@ -1,0 +1,345 @@
+.features-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-light);
+    /* Lighter background for the new section */
+    margin: -2rem -2rem 0 -2rem;
+    /* Negate padding from <main> */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /* Keep floating visuals contained */
+}
+
+.features-container {
+    max-width: 1250px;
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.features-text {
+    flex: 1;
+    max-width: 550px;
+}
+
+.features-text h2 {
+    font-size: 3.5rem;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    color: var(--color-primary-navy);
+    font-weight: 800;
+    line-height: 1.1;
+    opacity: 0;
+}
+
+.features-text p {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0;
+}
+
+.features-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    opacity: 0;
+}
+
+.feat-btn-primary {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--pgc-amber);
+    color: #17140d;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.feat-btn-primary:hover {
+    background-color: #FBBF24;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+.features-visuals {
+    flex: 1;
+    position: relative;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Visual Container */
+.visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+}
+
+
+/* Foreground iOS Mockups */
+.visual {
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+}
+
+.visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Mockup 5 - Back Right - "un poquito inclinado" */
+.visual-comp-1 {
+    width: 300px;
+    top: 15%;
+    left: 50%;
+    z-index: 2;
+    transform: rotateX(10deg) rotateY(-25deg) rotateZ(5deg) translateZ(-150px);
+}
+
+.visual-comp-1.pgc-floating {
+    animation: float-comp-1 6s ease-in-out infinite reverse;
+}
+
+
+/* Mockup 9 - Back Left - "los de arriba tiene una rotacion para adentro" */
+.visual-comp-2 {
+    width: 220px;
+    top: 5%;
+    right: 50%;
+    z-index: 1;
+    transform: rotateX(15deg) rotateY(20deg) rotateZ(-10deg) translateZ(-250px);
+}
+
+.visual-comp-2.pgc-floating {
+    animation: float-comp-2 7s ease-in-out infinite;
+}
+
+
+/* Mockup 7 - Middle Left - "uno volteado" / "para adentro" */
+.visual-second {
+    width: 260px;
+    top: 20%;
+    right: 35%;
+    z-index: 3;
+    transform: rotateX(5deg) rotateY(15deg) rotateZ(-5deg) translateZ(-50px);
+}
+
+.visual-second.pgc-floating {
+    animation: float-second 8s ease-in-out infinite;
+}
+
+/* Mockup 8 - Front Main - "la mas importante" */
+.visual-main {
+    width: 290px;
+    top: 30%;
+    right: 15%;
+    z-index: 4;
+    transform: rotateX(0deg) rotateY(-10deg) rotateZ(2deg) translateZ(50px);
+}
+
+.visual-main.pgc-floating {
+    animation: float-main 5s ease-in-out infinite;
+}
+
+
+
+/* Animations */
+@keyframes float-main {
+    0% {
+        transform: rotateX(0deg) rotateY(-10deg) rotateZ(2deg) translateZ(50px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(0deg) rotateY(-10deg) rotateZ(2deg) translateZ(50px) translateY(-15px);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(-10deg) rotateZ(2deg) translateZ(50px) translateY(0);
+    }
+}
+
+@keyframes float-second {
+    0% {
+        transform: rotateX(5deg) rotateY(15deg) rotateZ(-5deg) translateZ(-50px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(5deg) rotateY(15deg) rotateZ(-5deg) translateZ(-50px) translateY(-10px);
+    }
+
+    100% {
+        transform: rotateX(5deg) rotateY(15deg) rotateZ(-5deg) translateZ(-50px) translateY(0);
+    }
+}
+
+@keyframes float-comp-1 {
+    0% {
+        transform: rotateX(10deg) rotateY(-25deg) rotateZ(5deg) translateZ(-150px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(10deg) rotateY(-25deg) rotateZ(5deg) translateZ(-150px) translateY(-12px);
+    }
+
+    100% {
+        transform: rotateX(10deg) rotateY(-25deg) rotateZ(5deg) translateZ(-150px) translateY(0);
+    }
+}
+
+@keyframes float-comp-2 {
+    0% {
+        transform: rotateX(15deg) rotateY(20deg) rotateZ(-10deg) translateZ(-250px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(15deg) rotateY(20deg) rotateZ(-10deg) translateZ(-250px) translateY(-8px);
+    }
+
+    100% {
+        transform: rotateX(15deg) rotateY(20deg) rotateZ(-10deg) translateZ(-250px) translateY(0);
+    }
+}
+
+
+/* Animations for Mobile keeping the original base transforms */
+@keyframes float-main-mobile {
+    0% {
+        transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg) translateZ(100px) translateX(50%) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg) translateZ(100px) translateX(50%) translateY(-10px);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg) translateZ(100px) translateX(50%) translateY(0);
+    }
+}
+
+@keyframes float-second-mobile {
+    0% {
+        transform: rotateX(5deg) rotateY(-20deg) rotateZ(-5deg) translateZ(0px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(5deg) rotateY(-20deg) rotateZ(-5deg) translateZ(0px) translateY(-10px);
+    }
+
+    100% {
+        transform: rotateX(5deg) rotateY(-20deg) rotateZ(-5deg) translateZ(0px) translateY(0);
+    }
+}
+
+@keyframes float-comp-1-mobile {
+    0% {
+        transform: rotateX(10deg) rotateY(20deg) rotateZ(5deg) translateZ(-100px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(10deg) rotateY(20deg) rotateZ(5deg) translateZ(-100px) translateY(-10px);
+    }
+
+    100% {
+        transform: rotateX(10deg) rotateY(20deg) rotateZ(5deg) translateZ(-100px) translateY(0);
+    }
+}
+
+@keyframes float-comp-2-mobile {
+    0% {
+        transform: rotateX(15deg) rotateY(-10deg) rotateZ(-5deg) translateZ(-200px) translateY(0);
+    }
+
+    50% {
+        transform: rotateX(15deg) rotateY(-10deg) rotateZ(-5deg) translateZ(-200px) translateY(-10px);
+    }
+
+    100% {
+        transform: rotateX(15deg) rotateY(-10deg) rotateZ(-5deg) translateZ(-200px) translateY(0);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .features-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feat-btn-primary {
+        margin: auto;
+    }
+
+    .features-text {
+        margin-bottom: 3rem;
+    }
+
+    .features-visuals {
+        width: 100%;
+        height: 500px;
+        bottom: 3rem;
+        margin-bottom: 20rem;
+    }
+
+    /* Reset absolute positions to center cluster for mobile */
+    .visual-main {
+        right: 55%;
+        top: 40%;
+        transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg) translateZ(100px) translateX(50%);
+    }
+
+    .visual-main.pgc-floating {
+        animation: float-main-mobile 5s ease-in-out infinite;
+    }
+
+    .visual-second {
+        right: 20%;
+        top: 25%;
+        transform: rotateX(5deg) rotateY(-20deg) rotateZ(-5deg) translateZ(0px);
+    }
+
+    .visual-second.pgc-floating {
+        animation: float-second-mobile 8s ease-in-out infinite;
+    }
+
+    .visual-comp-1 {
+        right: 65%;
+        top: 15%;
+        transform: rotateX(10deg) rotateY(20deg) rotateZ(5deg) translateZ(-100px);
+    }
+
+    .visual-comp-1.pgc-floating {
+        animation: float-comp-1-mobile 6s ease-in-out infinite reverse;
+    }
+
+    .visual-comp-2 {
+        right: 40%;
+        top: 5%;
+        transform: rotateX(15deg) rotateY(-10deg) rotateZ(-5deg) translateZ(-200px);
+    }
+
+    .visual-comp-2.pgc-floating {
+        animation: float-comp-2-mobile 7s ease-in-out infinite;
+    }
+}
