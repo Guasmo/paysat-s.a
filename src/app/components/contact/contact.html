@@ -2,8 +2,8 @@
   <div class="contact-container">
     <div class="contact-text">
       <h2>Habla con nuestro equipo</h2>
-      <p>Descubre c&oacute;mo PAYSAT puede integrarse en tu instituci&oacute;n. Completa el formulario y un especialista
-        se pondr&aacute; en contacto contigo para ofrecerte una soluci&oacute;n a medida.</p>
+      <p>Descubre cómo PAYSAT puede integrarse en tu institución. Completa el formulario y un especialista
+        se pondrá en contacto contigo para ofrecerte una solución a medida.</p>
 
       <hr class="text-separator">
 
@@ -44,7 +44,7 @@
               [class.invalid]="contactForm.controls.name.invalid && contactForm.controls.name.touched">
           </div>
           <div class="form-group half-width">
-            <label for="institucion">Instituci&oacute;n</label>
+            <label for="institucion">Institución</label>
             <input id="institucion" type="text" formControlName="institucion" placeholder="Ej. Banco del Austro"
               [class.invalid]="contactForm.controls.institucion.invalid && contactForm.controls.institucion.touched">
           </div>
@@ -53,11 +53,11 @@
         <div class="form-row">
           <div class="form-group half-width">
             <label for="cargo">Cargo</label>
-            <input id="cargo" type="text" formControlName="cargo" placeholder="Ej. Gerente de Tecnolog&iacute;a"
+            <input id="cargo" type="text" formControlName="cargo" placeholder="Ej. Gerente de Tecnología"
               [class.invalid]="contactForm.controls.cargo.invalid && contactForm.controls.cargo.touched">
           </div>
           <div class="form-group half-width">
-            <label for="email">Correo electr&oacute;nico</label>
+            <label for="email">Correo electrónico</label>
             <input id="email" type="email" formControlName="email" placeholder="juan@banco.com"
               [class.invalid]="contactForm.controls.email.invalid && contactForm.controls.email.touched">
           </div>
@@ -65,15 +65,15 @@
 
         <div class="form-row">
           <div class="form-group half-width">
-            <label for="telefono">Tel&eacute;fono</label>
+            <label for="telefono">Teléfono</label>
             <input id="telefono" type="tel" formControlName="telefono" placeholder="Ej. +593 99 123 4567"
               [class.invalid]="contactForm.controls.telefono.invalid && contactForm.controls.telefono.touched">
           </div>
           <div class="form-group half-width">
-            <label for="tipoInstitucion">Tipo de instituci&oacute;n</label>
+            <label for="tipoInstitucion">Tipo de institución</label>
             <select id="tipoInstitucion" formControlName="tipoInstitucion"
               [class.invalid]="contactForm.controls.tipoInstitucion.invalid && contactForm.controls.tipoInstitucion.touched">
-              <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+              <option value="" disabled selected>Selecciona una opción</option>
               <option value="banco">Banco</option>
               <option value="cooperativa">Cooperativa</option>
               <option value="mutualista">Mutualista</option>
@@ -85,12 +85,12 @@
 
         <div class="form-row">
           <div class="form-group half-width">
-            <label for="solucion">Soluci&oacute;n de inter&eacute;s</label>
+            <label for="solucion">Solución de interés</label>
             <select id="solucion" formControlName="solucion"
               [class.invalid]="contactForm.controls.solucion.invalid && contactForm.controls.solucion.touched">
-              <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+              <option value="" disabled selected>Selecciona una opción</option>
               <option value="pagocel">PAGOCEL</option>
-              <option value="integracion-bancaria">Integraci&oacute;n Bancaria</option>
+              <option value="integracion-bancaria">Integración Bancaria</option>
               <option value="tarjetas">Tarjetas Visa / Mastercard</option>
               <option value="wallets">Wallets Digitales</option>
               <option value="core-banking">Core Banking</option>
@@ -102,7 +102,7 @@
             </select>
           </div>
           <div class="form-group half-width">
-            <label for="clientes">N&uacute;mero de clientes / socios</label>
+            <label for="clientes">Número de clientes / socios</label>
             <input id="clientes" type="text" formControlName="clientes" placeholder="Ej. 50,000"
               [class.invalid]="contactForm.controls.clientes.invalid && contactForm.controls.clientes.touched">
           </div>
@@ -111,7 +111,7 @@
         <div class="form-group">
           <label for="message">Mensaje</label>
           <textarea id="message" formControlName="message" rows="4"
-            placeholder="Cu&eacute;ntanos sobre tus necesidades o requerimientos..."
+            placeholder="Cuéntanos sobre tus necesidades o requerimientos..."
             [class.invalid]="contactForm.controls.message.invalid && contactForm.controls.message.touched"></textarea>
         </div>
 
@@ -119,13 +119,13 @@
           @if (isSubmitting()) {
           Enviando...
           } @else {
-          Solicitar reuni&oacute;n institucional
+          Solicitar reunión
           }
         </button>
 
         @if (submitSuccess()) {
         <div class="success-message">
-          &iexcl;Gracias! Nos pondremos en contacto contigo pronto para coordinar la reuni&oacute;n.
+          ¡Gracias! Nos pondremos en contacto contigo pronto para coordinar la reunión.
         </div>
         }
       </form>
