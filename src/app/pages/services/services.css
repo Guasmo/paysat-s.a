@@ -668,8 +668,9 @@
     gap: 2rem;
   }
 
-  .sol-float {
-    display: none;
+  .sol-fcard {
+    max-width: 150px;
+    padding: 0.85rem;
   }
 
   .sol-orbit-wrap {
@@ -715,6 +716,72 @@
     max-width: 340px;
   }
 
+  /* Cards reposicionadas y mas separadas para que no se encimen entre si */
+  .sol-float--top {
+    top: -8%;
+  }
+
+  .sol-float--left {
+    top: 28%;
+    left: -8%;
+  }
+
+  .sol-float--right {
+    top: 20%;
+    right: -8%;
+  }
+
+  .sol-float--bl {
+    bottom: -4%;
+    left: -6%;
+  }
+
+  .sol-float--br {
+    bottom: -4%;
+    right: -6%;
+  }
+
+  .sol-fcard {
+    min-width: 0;
+    width: 118px;
+    max-width: 118px;
+    padding: 0.65rem;
+    gap: 0.35rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .sol-fcard-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .sol-fcard-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sol-fcard-icon svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .sol-fcard-label {
+    font-size: 0.62rem;
+    line-height: 1.2;
+  }
+
+  .sol-fcard-val {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .sol-fcard-sub {
+    font-size: 0.56rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
   .solutions-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -737,6 +804,71 @@
 
   .sol-laptop {
     max-width: 260px;
+  }
+
+  .sol-float--top {
+    top: -6%;
+  }
+
+  .sol-float--left {
+    top: 26%;
+    left: -2%;
+  }
+
+  .sol-float--right {
+    top: 18%;
+    right: -2%;
+  }
+
+  .sol-float--bl {
+    bottom: -6%;
+    left: -2%;
+  }
+
+  .sol-float--br {
+    bottom: -6%;
+    right: -2%;
+  }
+
+  .sol-fcard {
+    min-width: 0;
+    width: 88px;
+    max-width: 88px;
+    padding: 0.5rem 0.4rem;
+    gap: 0.25rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .sol-fcard-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .sol-fcard-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sol-fcard-icon svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .sol-fcard-label {
+    font-size: 0.52rem;
+    line-height: 1.15;
+  }
+
+  .sol-fcard-val {
+    font-size: 0.76rem;
+    text-align: center;
+  }
+
+  /* En el telefono mas chico, se oculta el subtexto para que la card no crezca
+     demasiado y siga leyendose bien alrededor del laptop */
+  .sol-fcard-sub {
+    display: none;
   }
 
   .solutions-grid {
