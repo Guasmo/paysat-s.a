@@ -1,11 +1,13 @@
-import { Component, signal, ElementRef, inject, computed } from '@angular/core';
+import { Component, signal, inject, computed, effect } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
+import { Logo } from './components/logo/logo';
+import { MainButton } from "./components/button/main-button";
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, Logo, MainButton],
   templateUrl: './header.html',
   styleUrl: './header.css',
   host: {
@@ -15,6 +17,7 @@ import { filter } from 'rxjs/operators';
 export class Header {
   isScrolled = signal(false);
   activeSection = signal<string>('inicio');
+  menuOpen = signal(false);
 
   private router = inject(Router);
 
@@ -38,6 +41,19 @@ export class Header {
         }, 100);
       }
     });
+
+    effect(() => {
+      if (typeof document === 'undefined') return;
+      document.body.style.overflow = this.menuOpen() ? 'hidden' : '';
+    });
+  }
+
+  toggleMenu() {
+    this.menuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
   }
 
   onWindowScroll() {

@@ -1,7 +1,6 @@
 <header [class.scrolled]="isScrolled()">
-  <a routerLink="/" class="logo" aria-label="Inicio PAYSAT">
-    <img src="letras.png" alt="PAYSAT MONEY S.A." class="logo-img" />
-  </a>
+
+  <app-logo />
 
   <nav class="main-nav">
     <a routerLink="/" [class.active]="isHomePage() && activeSection() === 'inicio'">Inicio</a>
@@ -22,7 +21,34 @@
     <a routerLink="/abre-tu-cuenta" routerLinkActive="active">Contacto</a>
   </nav>
 
-  <div class="header-actions">
-    <button routerLink="/abre-tu-cuenta" class="cta-btn">Solicitar una reuni&oacute;n</button>
+  <app-main-button />
+
+  <div class="burger-menu" (click)="toggleMenu()" role="button" tabindex="0" aria-label="Abrir menú">
+    <img src="burger-menu-svgrepo-com.svg" alt="">
   </div>
 </header>
+
+<!-- Mobile Menu Modal -->
+<div class="menu-overlay" [class.open]="menuOpen()" (click)="closeMenu()"></div>
+<div class="menu-modal" [class.open]="menuOpen()" role="dialog" aria-label="Menú de navegación">
+  <div class="menu-modal-header">
+    <app-logo />
+    <button class="menu-close-btn" (click)="closeMenu()" aria-label="Cerrar menú">&times;</button>
+  </div>
+
+  <nav class="menu-nav">
+    <a routerLink="/" (click)="closeMenu()" [class.active]="isHomePage() && activeSection() === 'inicio'">Inicio</a>
+    <a (click)="scrollToIntegration($event); closeMenu()" [class.active]="isHomePage() && activeSection() === 'integracion'">Integracion</a>
+    <a (click)="scrollToBenefits($event); closeMenu()" [class.active]="isHomePage() && activeSection() === 'beneficios'">Instituciones Financieras</a>
+    <a routerLink="/nosotros" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
+    <a routerLink="/soluciones" routerLinkActive="active" (click)="closeMenu()">Soluciones</a>
+    <a routerLink="/pagocel" routerLinkActive="active" (click)="closeMenu()">PAGOCEL</a>
+    <a routerLink="/seguridad" routerLinkActive="active" (click)="closeMenu()">Seguridad y Cumplimiento</a>
+    <a routerLink="/recursos" routerLinkActive="active" (click)="closeMenu()">Recursos</a>
+    <a routerLink="/abre-tu-cuenta" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
+  </nav>
+
+  <div class="menu-modal-footer">
+    <a routerLink="/abre-tu-cuenta" class="menu-cta" (click)="closeMenu()">Solicitar una reunión</a>
+  </div>
+</div>
