@@ -14,11 +14,29 @@
     <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
     <a routerLink="/soluciones" routerLinkActive="active">Soluciones</a>
     <a routerLink="/pagocel" routerLinkActive="active">PAGOCEL</a>
-    <a routerLink="/seguridad" routerLinkActive="active">Seguridad y Cumplimiento</a>
 
-    <a routerLink="/recursos" routerLinkActive="active">Recursos</a>
+    <!-- Links que se ocultan en laptops pequeñas y pasan al dropdown "Más" -->
+    <a routerLink="/seguridad" routerLinkActive="active" class="nav-link--overflow">Seguridad y Cumplimiento</a>
+    <a routerLink="/recursos" routerLinkActive="active" class="nav-link--overflow">Recursos</a>
+    <a routerLink="/abre-tu-cuenta" routerLinkActive="active" class="nav-link--overflow">Contacto</a>
 
-    <a routerLink="/abre-tu-cuenta" routerLinkActive="active">Contacto</a>
+    <!-- Dropdown "Más": solo visible en el rango 1025px–1280px -->
+    <div class="nav-more">
+      <button type="button" class="nav-more-trigger" (click)="toggleMore($event)" [class.active]="moreOpen()"
+        aria-haspopup="true" [attr.aria-expanded]="moreOpen()">
+        Más
+        <svg class="nav-more-chevron" [class.open]="moreOpen()" viewBox="0 0 20 20" fill="none">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="nav-more-dropdown" [class.open]="moreOpen()">
+        <a routerLink="/seguridad" routerLinkActive="active" (click)="closeMore()">Seguridad y Cumplimiento</a>
+        <a routerLink="/recursos" routerLinkActive="active" (click)="closeMore()">Recursos</a>
+        <a routerLink="/abre-tu-cuenta" routerLinkActive="active" (click)="closeMore()">Contacto</a>
+      </div>
+    </div>
   </nav>
 
   <app-main-button />
@@ -38,8 +56,10 @@
 
   <nav class="menu-nav">
     <a routerLink="/" (click)="closeMenu()" [class.active]="isHomePage() && activeSection() === 'inicio'">Inicio</a>
-    <a (click)="scrollToIntegration($event); closeMenu()" [class.active]="isHomePage() && activeSection() === 'integracion'">Integracion</a>
-    <a (click)="scrollToBenefits($event); closeMenu()" [class.active]="isHomePage() && activeSection() === 'beneficios'">Instituciones Financieras</a>
+    <a (click)="scrollToIntegration($event); closeMenu()"
+      [class.active]="isHomePage() && activeSection() === 'integracion'">Integracion</a>
+    <a (click)="scrollToBenefits($event); closeMenu()"
+      [class.active]="isHomePage() && activeSection() === 'beneficios'">Instituciones Financieras</a>
     <a routerLink="/nosotros" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
     <a routerLink="/soluciones" routerLinkActive="active" (click)="closeMenu()">Soluciones</a>
     <a routerLink="/pagocel" routerLinkActive="active" (click)="closeMenu()">PAGOCEL</a>

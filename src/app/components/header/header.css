@@ -7,7 +7,7 @@
 }
 
 header {
-  padding: 0.75rem 2.5rem;
+  padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1.25rem, 4vw, 2.5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@ header.scrolled {
   margin: 12px 2rem;
   width: calc(100% - 3rem);
   border-radius: 15px;
-  padding: 0.6rem 2rem;
+  padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(1rem, 3vw, 2rem);
   background-color: rgba(14, 23, 38, 0.85);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -48,7 +48,7 @@ header.scrolled {
 /* Navigation */
 .main-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-items: center;
 }
 
@@ -56,7 +56,7 @@ header.scrolled {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: 0.88rem;
+  font-size: clamp(0.78rem, 1.1vw, 0.88rem);
   transition: color 0.2s;
   background: none;
   border: none;
@@ -94,18 +94,102 @@ header.scrolled {
   display: none;
 }
 
+/* Dropdown "Más" — oculto por defecto, solo aparece en el rango intermedio */
+.nav-more {
+  position: relative;
+  display: none;
+}
+
+.nav-more-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: clamp(0.78rem, 1.1vw, 0.88rem);
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-more-trigger:hover,
+.nav-more-trigger.active {
+  color: var(--color-primary-navy);
+}
+
+.nav-more-chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.nav-more-chevron.open {
+  transform: rotate(180deg);
+}
+
+.nav-more-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  min-width: 220px;
+  background: #0a1424;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1001;
+}
+
+.nav-more-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-more-dropdown a {
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  color: var(--color-text-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-more-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-primary-navy);
+}
+
+.nav-more-dropdown a.active {
+  color: var(--color-primary-navy);
+  background: rgba(245, 158, 11, 0.08);
+}
+
 /* ── Responsive ── */
-@media (max-width: 1100px) {
-  .main-nav {
-    gap: 2rem;
+
+/* Rango intermedio: laptops pequeñas / ventanas reducidas.
+   Oculta los links de menor prioridad y los agrupa en el dropdown "Más" */
+@media (min-width: 1025px) and (max-width: 1580px) {
+  .main-nav a.nav-link--overflow {
+    display: none;
   }
 
-  .main-nav a {
-    font-size: 0.8rem;
+  .nav-more {
+    display: block;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   header {
     padding: 0.75rem 1.5rem;
   }
@@ -243,7 +327,8 @@ header.scrolled {
 }
 
 /* Hide burger menu elements on desktop */
-@media (min-width: 481px) {
+@media (min-width: 1025px) {
+
   .menu-overlay,
   .menu-modal {
     display: none !important;

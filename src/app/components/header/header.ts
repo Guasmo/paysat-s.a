@@ -1,4 +1,4 @@
-import { Component, signal, inject, computed, effect } from '@angular/core';
+import { Component, signal, inject, computed, effect, ElementRef } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs/operators';
@@ -11,15 +11,18 @@ import { MainButton } from "./components/button/main-button";
   templateUrl: './header.html',
   styleUrl: './header.css',
   host: {
-    '(window:scroll)': 'onWindowScroll()'
+    '(window:scroll)': 'onWindowScroll()',
+    '(document:click)': 'onDocumentClick($event)'
   }
 })
 export class Header {
   isScrolled = signal(false);
   activeSection = signal<string>('inicio');
   menuOpen = signal(false);
+  moreOpen = signal(false);
 
   private router = inject(Router);
+  private elRef = inject(ElementRef);
 
   currentUrl = signal<string>('/');
   isHomePage = computed(() => {
@@ -54,6 +57,24 @@ export class Header {
 
   closeMenu() {
     this.menuOpen.set(false);
+  }
+
+  toggleMore(event: Event) {
+    event.stopPropagation();
+    this.moreOpen.update(v => !v);
+  }
+
+  closeMore() {
+    this.moreOpen.set(false);
+  }
+
+  onDocumentClick(event: Event) {
+    if (!this.moreOpen()) return;
+    const target = event.target as HTMLElement;
+    const clickedInsideMore = this.elRef.nativeElement.querySelector('.nav-more')?.contains(target);
+    if (!clickedInsideMore) {
+      this.closeMore();
+    }
   }
 
   onWindowScroll() {
