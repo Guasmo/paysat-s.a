@@ -46,7 +46,7 @@
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #D97706;
+    color: var(--pgc-amber-hover);
     margin-bottom: 1rem;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .integration-btn:hover {
-    background: #FBBF24;
+    background: var(--pgc-amber-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }

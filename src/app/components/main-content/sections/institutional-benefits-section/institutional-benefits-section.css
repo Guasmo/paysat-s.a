@@ -28,7 +28,7 @@
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #F59E0B;
+    color: var(--pgc-amber);
     margin-bottom: 1rem;
 }
 

@@ -31,7 +31,7 @@
 }
 
 .why-accent {
-    color: #F59E0B;
+    color: var(--pgc-amber);
 }
 
 .why-subtitle {
@@ -63,7 +63,7 @@
 .why-item-bar {
     flex-shrink: 0;
     width: 3px;
-    background: #F59E0B;
+    background: var(--pgc-amber);
     border-radius: 999px;
     align-self: stretch;
     margin-top: 4px;
