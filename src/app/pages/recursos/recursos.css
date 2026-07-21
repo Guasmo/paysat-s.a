@@ -9,11 +9,11 @@
 .rec-faq,
 .rec-casos,
 .rec-noticias {
-  --rec-amber: #F59E0B;
-  --rec-amber-hover: #D97706;
+  --rec-amber: var(--pgc-amber);
+  --rec-amber-hover: var(--pgc-amber-hover);
   --rec-amber-dim: rgba(245, 158, 11, 0.08);
   --rec-amber-border: rgba(245, 158, 11, 0.2);
-  --rec-teal: #00B4D8;
+  --rec-teal: var(--pgc-teal);
   --rec-teal-dim: rgba(0, 180, 216, 0.08);
   --rec-teal-border: rgba(0, 180, 216, 0.2);
   --rec-bg: var(--color-bg-light);
