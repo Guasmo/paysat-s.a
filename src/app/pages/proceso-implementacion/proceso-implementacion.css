@@ -22,22 +22,6 @@
   margin: 0 auto;
 }
 
-.pi-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0.35rem 1rem;
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.2);
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #F59E0B;
-  margin-bottom: 1.5rem;
-}
-
 .pi-hero-text {
   max-width: 550px;
 }
@@ -52,7 +36,7 @@
 }
 
 .pi-hero-accent {
-  color: #f3b240;
+  color: var(--pgc-amber);
 }
 
 .pi-hero-sub {
@@ -70,34 +54,6 @@
   margin-bottom: 1.5rem;
 }
 
-.pi-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  background: var(--pgc-amber);
-  color: #17140d;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-
-.pi-btn-primary:hover {
-  background: #FBBF24;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
-}
-
-.pi-btn-icon {
-  display: inline-flex;
-  width: 18px;
-  height: 18px;
-}
-
 .pi-trust-strip {
   display: flex;
   flex-wrap: wrap;
@@ -109,7 +65,7 @@
   margin-top: 1rem;
 }
 
-/* ── Floating cards (white background on white hero) ── */
+/* ── Floating cards positioning ── */
 .pi-float {
   position: absolute;
   z-index: 3;
@@ -121,90 +77,6 @@
 .pi-float--bl { bottom: 8%; left: 4%; }
 .pi-float--tr { top: 6%; right: 3%; }
 .pi-float--br { bottom: 8%; right: 4%; }
-
-.pi-fcard {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  padding: 1rem;
-  min-width: 160px;
-  max-width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.pi-fcard-row {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.pi-fcard-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  flex: 1;
-}
-
-.pi-fcard-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.pi-fcard-icon svg { width: 12px; height: 12px; }
-
-.pi-fcard-icon--teal {
-  background: rgba(0, 180, 216, 0.08);
-  color: #00B4D8;
-}
-
-.pi-fcard-icon--amber {
-  background: rgba(245, 158, 11, 0.08);
-  color: #F59E0B;
-}
-
-.pi-fcard-val {
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  color: var(--color-primary-navy);
-  margin: 0;
-  line-height: 1;
-}
-
-.pi-fcard-val--amber { color: #F59E0B; }
-
-.pi-fcard-sub {
-  font-size: 0.65rem;
-  color: var(--color-text-muted);
-  margin: 0;
-  line-height: 1.35;
-}
-
-.pi-fcard-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-
-.pi-fcard-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.pi-fcard-stat-val {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--color-primary-navy);
-}
 
 /* ═══════════════════════════════════════════════
    TIMELINE SECTION
@@ -262,7 +134,7 @@
 .pi-track-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #F59E0B, #f3b240);
+  background: linear-gradient(90deg, var(--pgc-amber), var(--pgc-amber-hover));
   border-radius: 2px;
   transition: width 0.8s ease;
 }
@@ -300,14 +172,14 @@
 }
 
 .pi-step--active .pi-step-marker {
-  border-color: #F59E0B;
-  background: #F59E0B;
+  border-color: var(--pgc-amber);
+  background: var(--pgc-amber);
   transform: scale(1.15);
-  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+  box-shadow: 0 0 0 4px var(--color-amber-border);
 }
 
 .pi-step--active .pi-step-num {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 /* Step card */
@@ -323,8 +195,8 @@
 }
 
 .pi-step--active .pi-step-card {
-  border-color: rgba(245, 158, 11, 0.3);
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1);
+  border-color: var(--color-amber-border);
+  box-shadow: 0 4px 20px var(--color-amber-dim);
   transform: translateY(-4px);
 }
 
