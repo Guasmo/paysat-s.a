@@ -1,0 +1,90 @@
+<!-- ==============================================
+   HERO - Split layout: texto izquierda, telefono derecha
+   + 4 cards flotantes que EXPLOTAN desde el centro
+=============================================== -->
+<section class="pgc-hero" aria-label="Introduccion a PAGOCEL">
+
+  <!-- Contenido central: texto izquierda / telefono derecha -->
+  <div class="pgc-hero-inner">
+
+    <div class="pgc-hero-text">
+      <h1 class="pgc-hero-h1">
+        Con PAGOCEL, tu n&uacute;mero<br>de celular<br>
+        <span class="pgc-hero-accent">es tu cuenta.</span>
+      </h1>
+      <p class="pgc-hero-sub">
+        Transfiere, cobra con QR y conecta tu instituci&oacute;n al sistema financiero
+        desde una sola plataforma. Sin fricci&oacute;n, sin papel, en segundos.
+      </p>
+      <div class="pgc-hero-actions">
+        <a routerLink="/abre-tu-cuenta" class="pgc-btn-primary" id="pagocel-demo-cta">
+          Solicitar demo
+          <span class="pgc-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a routerLink="/soluciones" class="pgc-btn-ghost">Ver soluciones</a>
+      </div>
+
+
+      <div class="pgc-trust-strip" aria-label="Caracteristicas clave">
+        <span>Transferencias instant&aacute;neas</span>
+        <span aria-hidden="true">-</span>
+        <span>QR est&aacute;tico y din&aacute;mico</span>
+        <span aria-hidden="true">-</span>
+        <span>Core Bancario integrado</span>
+      </div>
+    </div>
+
+    <!-- Telefono derecha -->
+    <div class="pgc-hero-visual" aria-hidden="true">
+      <!-- Card izquierda conectada: Transferencia Exitosa -->
+      <div class="pgc-float pgc-connected-card pgc-connected-card--left">
+        <div class="pgc-fcard">
+          <div class="pgc-fcard-row">
+            <span class="pgc-fcard-icon">
+              <img src="transferencia-bancaria.png" alt="Transferencia" class="pgc-fcard-icon-img" />
+            </span>
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+              <span class="pgc-fcard-label" style="color: var(--pgc-amber);">Transferencia</span>
+              <a href="https://www.flaticon.es/iconos-gratis/transferir-dinero" title="transferir dinero iconos"
+                style="font-size: 0.5rem; color: #64748b; text-decoration: none; margin-top: 2px;">
+              </a>
+            </div>
+          </div>
+          <p class="pgc-fcard-amount">$25.00</p>
+          <p class="pgc-fcard-sub">A: Cooprogreso y muchas instituciones mas</p>
+        </div>
+        <div class="pgc-connector-line pgc-connector-line--left"></div>
+      </div>
+
+      <!-- Phone Shell -->
+      <div class="pgc-phone-shell">
+        <div class="pgc-phone-bezel">
+          <img src="mockup-7.png" alt="Pantalla principal de PAGOCEL mostrando pago movil" class="pgc-hero-phone"
+            width="300" height="600" />
+        </div>
+      </div>
+
+      <!-- Card derecha conectada: QR para cobros -->
+      <div class="pgc-float pgc-connected-card pgc-connected-card--right">
+        <div class="pgc-fcard">
+          <div class="pgc-fcard-row">
+            <span class="pgc-fcard-icon pgc-fcard-icon--amber">
+              <img src="qr-code-svgrepo-com.svg" alt="" class="pgc-fcard-icon-img" />
+            </span>
+            <span class="pgc-fcard-label"><span style="color: var(--pgc-amber);">QR</span> para cobros</span>
+          </div>
+          <p class="pgc-fcard-amount">$150.00</p>
+          <p class="pgc-fcard-sub">Recibido hoy<br>Banco del Austro</p>
+        </div>
+        <div class="pgc-connector-line pgc-connector-line--right"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -10,13 +10,13 @@
 .pgc-section,
 .pgc-cta {
   /* Brand accent */
-  --pgc-amber: #F59E0B;
-  --pgc-amber-hover: #FBBF24;
+  /* pgc-amber and pgc-amber-hover come from the global styles.css */
   --pgc-amber-dim: rgba(245, 158, 11, 0.12);
   --pgc-amber-border: rgba(245, 158, 11, 0.28);
   --pgc-teal: #22D3EE;
   --pgc-teal-dim: rgba(34, 211, 238, 0.1);
   --pgc-teal-border: rgba(34, 211, 238, 0.25);
+
 
   /* Backgrounds — deep navy */
   --pgc-bg: var(--color-bg-alt);
@@ -89,20 +89,7 @@
   /* estado inicial, GSAP lo anima a 1 */
 }
 
-.pgc-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0.35rem 1rem;
-  background: var(--pgc-amber-dim);
-  border: 1px solid var(--pgc-amber-border);
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--pgc-amber);
-}
+
 
 .pgc-hero-h1 {
   font-size: clamp(2.8rem, 5.5vw, 4.4rem);
@@ -424,56 +411,7 @@
   right: 4%;
 }
 
-.pgc-fcard {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 14px;
-  padding: 1.1rem;
-  min-width: 200px;
-  max-width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-}
 
-.pgc-fcard-row {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.pgc-fcard-label {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: black;
-  flex: 1;
-}
-
-.pgc-fcard-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.pgc-fcard-icon svg {
-  width: 15px;
-  height: 15px;
-}
-
-.pgc-qr-card .pgc-fcard-icon {
-  width: 48px;
-  height: 48px;
-}
-
-.pgc-qr-card .pgc-fcard-icon svg {
-  width: 40px;
-  height: 40px;
-}
 
 /* FIX: los <img> de icono (transferencia-bancaria.png, qr-code-svgrepo-com.svg)
    no tenían regla propia — sin esto el navegador los pinta a su tamaño natural
@@ -507,6 +445,21 @@
   border-color: rgba(245, 158, 11, 0.2);
 }
 
+/* Overrides locales para pagocel: bg blanco y texto oscuro */
+.pgc-connected-card .pgc-fcard,
+.pgc-qr-card .pgc-fcard,
+.pgc-sec-float .pgc-fcard {
+  background-color: var(--color-primary-navy);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.pgc-connected-card .pgc-fcard-label,
+.pgc-qr-card .pgc-fcard-label,
+.pgc-sec-float .pgc-fcard-label {
+  color: #0e0f12;
+  font-weight: 700;
+}
+
 .pgc-fcard-amount {
   font-size: 1.5rem;
   font-weight: 900;
@@ -522,7 +475,7 @@
 
 .pgc-fcard-sub {
   font-size: 0.65rem;
-  color: #585b60;
+  color: var(--color-text-muted);
   margin: 0;
   line-height: 1.35;
 }
@@ -558,84 +511,7 @@
 .pgc-fcard-val {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--pgc-text-primary);
-}
-
-/* ─────────────────────────────────────────────
-   BUTTONS
-───────────────────────────────────────────────  */
-.pgc-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--pgc-amber);
-  color: #000;
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 0.75rem 1rem 0.75rem 1.5rem;
-  border-radius: 12px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background var(--pgc-duration) ease, transform var(--pgc-duration) var(--pgc-spring);
-}
-
-.pgc-btn-primary:hover {
-  background: var(--pgc-amber-hover);
-  transform: translateY(-2px);
-}
-
-.pgc-btn-primary:active {
-  transform: scale(0.98);
-}
-
-.pgc-btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.12);
-  flex-shrink: 0;
-  transition: transform var(--pgc-duration) var(--pgc-spring);
-}
-
-.pgc-btn-primary:hover .pgc-btn-icon {
-  transform: translateX(3px);
-}
-
-.pgc-btn-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-.pgc-btn-primary--xl {
-  font-size: 1rem;
-  padding: 0.9rem 1.1rem 0.9rem 1.75rem;
-}
-
-.pgc-btn-primary--xl .pgc-btn-icon {
-  width: 32px;
-  height: 32px;
-}
-
-.pgc-btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  color: var(--pgc-text-muted);
-  font-weight: 600;
-  font-size: 0.92rem;
-  padding: 0.75rem 1.25rem;
-  border-radius: 12px;
-  text-decoration: none;
-  border: 1px solid var(--pgc-border);
-  transition: border-color var(--pgc-duration) ease, color var(--pgc-duration) ease;
-}
-
-.pgc-btn-ghost:hover {
-  border-color: var(--pgc-border-hover);
-  color: var(--pgc-text-primary);
+  color: #0e0f12;
 }
 
 /* ─────────────────────────────────────────────
@@ -680,7 +556,7 @@
 }
 
 .feat-btn-primary:hover {
-  background-color: #FBBF24;
+  background-color: var(--pgc-amber-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }
@@ -1053,11 +929,10 @@
     gap: 2rem;
   }
 
-  .pgc-float {
-    display: none;
-  }
-
-  .pgc-sec-float {
+  /* FIX: las qr-card comparten la clase .pgc-sec-float (solo para que GSAP las
+     anime junto con las demas), pero SI deben verse en mobile/tablet — antes
+     esta regla las ocultaba por error junto con las decorativas */
+  .pgc-sec-float:not(.pgc-qr-card) {
     display: none;
   }
 
@@ -1065,24 +940,86 @@
     gap: 2rem;
   }
 
-  /* Las cards de QR sí llevan texto real (no son decorativas como el resto de
-     .pgc-sec-float), así que en vez de ocultarlas las apilamos arriba/abajo del telefono */
+  /* NOTA: aquí NO hay override de posición para .pgc-connected-card--left/--right.
+     En este rango (900–1100px) el teléfono sigue midiendo 280px (sin cambios),
+     así que la regla base calc(50% + 146px + 8px) ya calcula la posición
+     correcta relativa al teléfono actual — un % fijo (como tenía antes) se
+     rompe apenas el contenedor cambia de ancho, que es justo lo que causaba
+     que las cards quedaran encima del teléfono en las capturas. */
+
+  .pgc-connected-card .pgc-fcard {
+    min-width: 0;
+    max-width: 210px;
+    padding: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pgc-connected-card .pgc-fcard-icon svg,
+  .pgc-connected-card .pgc-fcard-icon-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pgc-connected-card .pgc-fcard-label {
+    font-size: 0.92rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-amount {
+    font-size: 1.15rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-sub {
+    font-size: 0.64rem;
+    line-height: 1.3;
+  }
+
+  /* ── QR: mismo patron — las cards (que si llevan texto real) pasan a
+     overlay sobre las esquinas del telefono en vez de apilarse a ancho
+     completo. El conector SVG se conserva (preserveAspectRatio="none" ya
+     hace que se re-escale solo al nuevo hueco entre card y telefono) ── */
   .pgc-qr-card {
-    display: flex;
-    position: static;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
+    width: clamp(160px, 38vw, 220px);
+    max-width: none;
+    margin: 0;
     transform: none;
   }
 
-  .pgc-qr-visual {
-    flex-direction: column;
-    gap: 1.5rem;
+  /* Tampoco hay override de left/right/top aquí: el sec-phone sigue en 350px
+     en este rango, así que la regla base calc(50% + 175px + 20px) ya ubica
+     bien las cards junto al teléfono, y el conector SVG base (95x38, bottom:16)
+     ya apunta al lugar correcto porque nada de eso cambió de tamaño. */
+
+  .pgc-qr-card .pgc-fcard {
+    gap: 0.45rem;
+    padding: 0.85rem;
   }
 
-  .pgc-qr-connector-svg {
-    display: none;
+  .pgc-qr-card .pgc-fcard-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pgc-qr-card .pgc-fcard-icon svg,
+  .pgc-qr-card .pgc-fcard-icon-img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .pgc-qr-card-title {
+    font-size: 0.85rem;
+  }
+
+  /* FIX: faltaba este override — .pgc-fcard-label hereda 1.5rem (24px) fijo
+     de la regla base, pensado para las cards de 260px del desktop. En una
+     card angosta ese tamaño se ve desproporcionado y puede desbordar el
+     padding de la card ("Estático"/"Dinámico" saliéndose del div). */
+  .pgc-qr-card .pgc-fcard-label {
+    font-size: 1.05rem;
   }
 }
 
@@ -1110,35 +1047,149 @@
 
   .pgc-hero-visual {
     order: -1;
-    flex-direction: column;
-    gap: 1.25rem;
   }
 
-  /* Reactivamos las cards del hero (Transferencia / QR) en vez de ocultarlas:
-     se apilan arriba y abajo del teléfono, centradas, sin la línea conectora
-     (que solo tiene sentido cuando la card está pegada al lateral del telefono) */
+  /* Telefono: se achica y se endereza (el tilt 3D se ve raro/desalineado en
+     pantallas angostas) */
   .pgc-phone-shell {
-    order: 1;
-  }
-
-  .pgc-connected-card {
-    display: flex;
-    position: static;
-    justify-content: center;
-    width: 100%;
     transform: none;
   }
 
+  .pgc-hero-phone {
+    width: clamp(190px, 58vw, 250px);
+  }
+
+  /* Cards del hero: ahora arriba/abajo del telefono (no a los lados), pegadas
+     por su borde horizontal al borde real del telefono en este breakpoint.
+     El offset horizontal usa la MISMA formula que el ancho de .pgc-hero-phone
+     (clamp(190px,58vw,250px)/2 + 6px del padding del shell), asi el borde de
+     la card siempre coincide con el borde del telefono en cualquier viewport
+     dentro de este rango. */
   .pgc-connected-card--left {
-    order: 2;
+    left: calc(10% - (clamp(190px, 58vw, 250px) / 2) - 6px);
+    right: auto;
+    bottom: 80%;
+    top: -5%;
+    margin-bottom: 14px;
+    transform: none;
   }
 
   .pgc-connected-card--right {
-    order: 3;
+    right: calc(5% - (clamp(190px, 58vw, 250px) / 2) - 6px);
+    left: auto;
+    top: 80%;
+    bottom: auto;
+    margin-top: 14px;
+    transform: none;
   }
 
-  .pgc-connector-line {
+  /* Lineas conectoras: se ocultan en móvil */
+  .pgc-connector-line,
+  .pgc-connector-line--left,
+  .pgc-connector-line--right,
+  .pgc-connector-line--left::after,
+  .pgc-connector-line--right::after,
+  .pgc-qr-connector-svg--left,
+  .pgc-qr-connector-svg--right {
     display: none;
+  }
+
+  .pgc-connected-card .pgc-fcard {
+    max-width: 185px;
+    padding: 0.8rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pgc-connected-card .pgc-fcard-icon svg,
+  .pgc-connected-card .pgc-fcard-icon-img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pgc-connected-card .pgc-fcard-label {
+    font-size: 0.85rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-amount {
+    font-size: 1.08rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-sub {
+    font-size: 0.6rem;
+  }
+
+  /* QR: sec-phone pasa a 220px de ancho en este breakpoint (via max-width
+     más abajo), así que el offset de las cards se recalcula con esa misma
+     medida (220/2=110 + 14px de hueco) para que sigan ancladas al borde
+     real del teléfono en vez de superponerse. */
+  .pgc-qr-card {
+    width: clamp(140px, 42vw, 190px);
+  }
+
+  /* Card "Estatico": ahora arriba-izquierda del telefono (no al costado).
+     220/2=110 + 16px del padding de .pgc-sec-phone-wrap = borde real del
+     telefono en este breakpoint. */
+  .pgc-qr-card--left {
+    left: calc(20% - 110px - 16px);
+    right: auto;
+    bottom: 60%;
+    top: auto;
+    margin-bottom: 14px;
+  }
+
+  /* Card "Dinamico": abajo-derecha del telefono. */
+  .pgc-qr-card--right {
+    right: calc(20% - 110px - 16px);
+    left: auto;
+    top: 40%;
+    bottom: auto;
+    margin-top: 14px;
+  }
+
+  /* El conector de "Estatico" ahora viaja casi vertical (angosto y alto) para
+     bajar desde la card hasta el boton real, cerca de la base del telefono.
+     El de "Dinamico" es corto: la card ya arranca pegada abajo del telefono. */
+
+
+  .pgc-qr-connector-track {
+    stroke: var(--pgc-connector-red);
+  }
+
+  .pgc-qr-connector-flow {
+    stroke: var(--pgc-connector-red);
+    filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.85));
+  }
+
+  .pgc-qr-connector-dot {
+    fill: var(--pgc-connector-red);
+    filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.7));
+  }
+
+  .pgc-qr-card-title {
+    font-size: 0.8rem;
+  }
+
+  .pgc-qr-card .pgc-fcard-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pgc-qr-card .pgc-fcard-icon svg,
+  .pgc-qr-card .pgc-fcard-icon-img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pgc-qr-card .pgc-fcard-label {
+    font-size: 0.95rem;
+  }
+
+  .pgc-qr-card .pgc-fcard-sub {
+    font-size: 0.62rem;
   }
 
   /* FIX CRÍTICO: este -20rem está pensado para el layout de 2 columnas de
@@ -1221,6 +1272,127 @@
 
   .pgc-cta {
     padding: 5rem 1.25rem;
+  }
+
+  .pgc-hero-phone {
+    width: clamp(170px, 56vw, 210px);
+  }
+
+  .pgc-connected-card--left {
+    left: calc(30% - (clamp(170px, 56vw, 210px) / 2) - 6px);
+    right: auto;
+    bottom: 100%;
+    top: 0;
+    margin-bottom: 10px;
+    transform: none;
+  }
+
+  .pgc-connected-card--right {
+    right: calc(25% - (clamp(170px, 56vw, 210px) / 2) - 6px);
+    left: auto;
+    top: 100%;
+    bottom: 5%;
+    margin-top: 10px;
+    transform: none;
+  }
+
+  /* Lineas conectoras: se ocultan en móvil pequeño */
+  .pgc-connector-line,
+  .pgc-connector-line--left,
+  .pgc-connector-line--right,
+  .pgc-connector-line--left::after,
+  .pgc-connector-line--right::after,
+  .pgc-qr-connector-svg--left,
+  .pgc-qr-connector-svg--right {
+    display: none;
+  }
+
+
+  .pgc-connected-card .pgc-fcard {
+    max-width: 150px;
+    padding: 0.65rem;
+    gap: 0.35rem;
+    border-radius: 10px;
+  }
+
+  .pgc-connected-card .pgc-fcard-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pgc-connected-card .pgc-fcard-icon svg,
+  .pgc-connected-card .pgc-fcard-icon-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .pgc-connected-card .pgc-fcard-label {
+    font-size: 0.76rem;
+  }
+
+  .pgc-connected-card .pgc-fcard-amount {
+    font-size: 0.85rem;
+  }
+
+  /* En telefonos muy angostos se oculta el subtexto largo para que la card
+     no crezca demasiado */
+  .pgc-connected-card .pgc-fcard-sub {
+    display: none;
+  }
+
+  .pgc-sec-phone {
+    max-width: 170px;
+  }
+
+  /* sec-phone pasa a 170px aquí (170/2=85 + 10px de hueco), y el conector
+     SVG se re-escala a la misma proporción (170/350 ≈ 0.49) */
+  .pgc-qr-card {
+    width: clamp(120px, 46vw, 150px);
+  }
+
+  .pgc-qr-card--left {
+    left: calc(30% - 85px - 16px);
+    right: auto;
+    bottom: 100%;
+    top: -10%;
+    margin-bottom: 10px;
+  }
+
+  .pgc-qr-card--right {
+    right: calc(33% - 85px - 16px);
+    left: auto;
+    top: 65%;
+    bottom: auto;
+    margin-top: 10px;
+  }
+
+  .pgc-qr-card .pgc-fcard {
+    padding: 0.6rem;
+    gap: 0.3rem;
+  }
+
+  .pgc-qr-card-title {
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+
+  .pgc-qr-card .pgc-fcard-label {
+    font-size: 0.85rem;
+  }
+
+  .pgc-qr-card .pgc-fcard-sub {
+    display: none;
+  }
+
+  .pgc-qr-card .pgc-fcard-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .pgc-qr-card .pgc-fcard-icon svg,
+  .pgc-qr-card .pgc-fcard-icon-img {
+    width: 16px;
+    height: 16px;
   }
 }
 
