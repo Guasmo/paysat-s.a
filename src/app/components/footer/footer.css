@@ -54,7 +54,7 @@
 }
 
 .pg-footer-nav a:hover {
-  color: #F59E0B;
+  color: var(--pgc-amber);
 }
 
 /* App section */

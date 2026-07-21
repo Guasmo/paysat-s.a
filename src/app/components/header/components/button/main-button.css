@@ -16,7 +16,7 @@
 .cta-btn:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 16px rgba(245, 158, 11, 0.25);
-    background-color: #FBBF24;
+    background-color: var(--pgc-amber-hover);
 }
 
 @media (max-width: 1024px) {
