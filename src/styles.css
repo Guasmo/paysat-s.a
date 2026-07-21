@@ -17,7 +17,41 @@
   --color-white: #ffffff;
   --color-border: rgba(248, 250, 252, 0.08);
   /* hairline border */
+
+  /* Amber — color global de marca */
   --pgc-amber: #F59E0B;
+  --pgc-amber-rgb: 245, 158, 11;
+  --color-amber: #F59E0B;         /* alias legado — usar --pgc-amber */
+  --pgc-amber-dim: rgba(245, 158, 11, 0.08);     /* fondo chips/icons */
+  --pgc-amber-border: rgba(245, 158, 11, 0.2);   /* borde chips */
+  --color-amber-dim: var(--pgc-amber-dim);        /* alias legado */
+  --color-amber-border: var(--pgc-amber-border);  /* alias legado */
+
+  /* Amber extended */
+  --pgc-amber-hover: #D97706;
+  --pgc-amber-glow: rgba(245, 158, 11, 0.18);
+
+  /* Teal extended */
+  --pgc-teal: #00B4D8;
+  --pgc-teal-rgb: 0, 180, 216;
+  --pgc-teal-dim: rgba(0, 180, 216, 0.08);
+  --pgc-teal-border: rgba(0, 180, 216, 0.2);
+  --color-teal-dim: var(--pgc-teal-dim);      /* alias legado */
+  --color-teal-border: var(--pgc-teal-border); /* alias legado */
+
+  /* Layout tokens */
+  --section-max-width: 1200px;
+  --border-radius-card: 14px;
+  /* cards flotantes */
+  --border-radius-card-lg: 16px;
+  /* client cards */
+
+  /* Easing tokens */
+  --pgc-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* bouncy spring — botones y elementos interactivos */
+  --pgc-ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+  /* smooth ease-out — cards hover */
+
 }
 
 body {
@@ -40,4 +74,220 @@ h6 {
   font-family: 'Noto Sans', sans-serif;
   color: var(--color-primary-navy);
   margin-top: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL UI COMPONENTS (PAYSAT SYSTEM)
+═══════════════════════════════════════════════ */
+
+/* ── BUTTONS ── */
+.pgc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--pgc-amber);
+  color: #17140d;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.75rem 1rem 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 200ms ease, transform 200ms var(--pgc-spring);
+}
+.pgc-btn-primary:hover {
+  background: var(--pgc-amber-hover);
+  transform: translateY(-2px);
+}
+.pgc-btn-primary:active { transform: scale(0.98); }
+
+.pgc-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  transition: transform 200ms var(--pgc-spring);
+}
+.pgc-btn-primary:hover .pgc-btn-icon { transform: translateX(3px); }
+.pgc-btn-icon svg { width: 14px; height: 14px; }
+
+.pgc-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.pgc-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--color-primary-navy);
+}
+
+/* ── EYEBROW ── */
+.pgc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.35rem 1rem;
+  background: var(--color-amber-dim);
+  border: 1px solid var(--color-amber-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pgc-amber);
+}
+.pgc-eyebrow svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ── ACCENT TEXT ── */
+.pgc-accent { color: var(--pgc-amber); }
+
+
+/* ── FLOATING CARDS ── */
+.pgc-fcard {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-card);
+  padding: 1.1rem;
+  min-width: 170px;
+  max-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.pgc-fcard-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pgc-fcard-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.pgc-fcard-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.pgc-fcard-icon svg { width: 12px; height: 12px; }
+.pgc-fcard-icon--teal {
+  background: var(--color-teal-dim);
+  color: var(--color-accent-teal);
+}
+.pgc-fcard-icon--amber {
+  background: var(--color-amber-dim);
+  color: var(--pgc-amber);
+}
+
+.pgc-fcard-val {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--color-primary-navy);
+  margin: 0;
+  line-height: 1;
+}
+.pgc-fcard-val--amber { color: var(--pgc-amber); }
+
+.pgc-fcard-sub {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Modificadores 2 columnas para cards */
+.pgc-fcard-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+.pgc-fcard-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.pgc-fcard-stat-val {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-primary-navy);
+  line-height: 1;
+}
+
+/* Modificador Mono para fcard (Fondo Blanco) */
+.pgc-fcard--mono {
+  background: var(--color-white);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.pgc-fcard-icon--mono {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+}
+.pgc-fcard--mono .pgc-fcard-val   { color: #0f172a; }
+.pgc-fcard--mono .pgc-fcard-label { color: var(--pgc-amber); font-weight: 700; }
+.pgc-fcard--mono .pgc-fcard-sub   { color: #64748b; }
+
+/* Responsive adjustments for Global UI Components */
+@media (max-width: 900px) {
+  .pgc-fcard {
+    min-width: 0;
+    width: 118px;
+    max-width: 118px;
+    padding: 0.65rem;
+    gap: 0.35rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .pgc-fcard-row   { flex-direction: column; gap: 0.3rem; }
+  .pgc-fcard-icon  { width: 22px; height: 22px; }
+  .pgc-fcard-icon svg { width: 11px; height: 11px; }
+  .pgc-fcard-label { font-size: 0.62rem; line-height: 1.2; }
+  .pgc-fcard-val   { font-size: 0.9rem; text-align: center; }
+  .pgc-fcard-sub   { font-size: 0.56rem; line-height: 1.25; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .pgc-fcard {
+    width: 88px;
+    max-width: 88px;
+    padding: 0.5rem 0.4rem;
+    gap: 0.25rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .pgc-fcard-row  { flex-direction: column; gap: 0.25rem; }
+  .pgc-fcard-icon { width: 18px; height: 18px; }
+  .pgc-fcard-icon svg { width: 9px; height: 9px; }
+  .pgc-fcard-label { font-size: 0.52rem; line-height: 1.15; }
+  .pgc-fcard-val   { font-size: 0.76rem; text-align: center; }
+  .pgc-fcard-sub   { display: none; }
 }
