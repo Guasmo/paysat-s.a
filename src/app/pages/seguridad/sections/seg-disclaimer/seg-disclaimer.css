@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════════════
+   SEG-DISCLAIMER — Aviso legal PAYSAT no es banco
+═══════════════════════════════════════════════ */
+
+.seg-disclaimer {
+  background: var(--color-bg-light);
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.seg-disclaimer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: rgba(245, 158, 11, 0.04);
+  border: 1px solid var(--pgc-amber-border);
+  border-radius: var(--border-radius-card-lg);
+  padding: 2rem;
+}
+
+.seg-disclaimer-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--pgc-amber-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pgc-amber);
+}
+
+.seg-disclaimer-icon svg { width: 24px; height: 24px; }
+
+.seg-disclaimer-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  margin: 0 0 0.5rem;
+}
+
+.seg-disclaimer-text p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.seg-disclaimer-text strong { color: var(--color-primary-navy); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .seg-disclaimer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .seg-disclaimer { padding: 3rem 1.25rem; }
+}
