@@ -1,0 +1,242 @@
+/* ═══════════════════════════════════════════════
+   SOL-GRID — Grid de soluciones (10 cards)
+═══════════════════════════════════════════════ */
+
+/* ── Divider — Nuestras Soluciones ── */
+.sol-divider {
+  padding: 0 0 3rem;
+  text-align: center;
+}
+
+.sol-divider-inner {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sol-divider-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--color-primary-navy);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.sol-divider-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: var(--pgc-amber-dim);
+  border: 1px solid var(--pgc-amber-border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--pgc-amber-hover);
+}
+
+.sol-divider-sub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/* ── Main wrapper ── */
+.solutions-main {
+  padding: 5rem 2rem 6rem;
+  background-color: var(--color-bg-alt);
+}
+
+/* ── Grid: bento layout ── */
+.solutions-grid {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Cards ── */
+.solution-card {
+  position: relative;
+  background-color: var(--color-primary-navy);
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  padding: 6rem 2rem 2rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  opacity: 0;
+  transition:
+    transform 400ms var(--pgc-ease-out),
+    box-shadow 400ms var(--pgc-ease-out),
+    border-color 300ms ease,
+    background-color 300ms ease;
+  cursor: pointer;
+}
+
+/* Overlay fade al bottom */
+.solution-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 20, 35, 0.95) 0%, rgba(10, 20, 35, 0.75) 40%, rgba(10, 20, 35, 0) 80%);
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.solution-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.solution-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px var(--pgc-amber-border),
+    0 0 24px var(--pgc-amber-dim);
+}
+
+.solution-card:hover .card-icon {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--pgc-amber);
+}
+
+/* Featured card — 2 columnas */
+.solution-card--featured { grid-column: span 2; }
+
+/* Card icon */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
+  transition: border-color 300ms ease, background 300ms ease, color 300ms ease;
+}
+
+.card-icon svg { width: 24px; height: 24px; }
+
+/* Card text */
+.solution-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.solution-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Badge */
+.card-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  background: rgba(0, 180, 216, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-teal);
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+/* Ribbon bander&iacute;n */
+.solution-card--featured .card-ribbon {
+  position: absolute;
+  top: -14px;
+  right: 1.75rem;
+  left: auto !important;
+  width: 42px;
+  background-color: var(--pgc-amber-hover);
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 2px 14px 2px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.card-ribbon svg {
+  width: 14px;
+  height: 14px;
+  margin-bottom: 4px;
+}
+
+.card-ribbon span {
+  font-size: 0.5rem;
+  font-weight: 800;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Conocer M&aacute;s */
+.card-footer-action {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+.btn-conocer-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--pgc-amber-hover);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s var(--pgc-spring);
+}
+
+.btn-conocer-mas:hover {
+  background-color: var(--pgc-amber);
+  transform: translateX(3px);
+}
+
+.btn-conocer-mas svg { width: 16px; height: 16px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .solutions-grid         { grid-template-columns: repeat(2, 1fr); }
+  .solution-card--featured { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .solutions-grid          { grid-template-columns: 1fr; gap: 1rem; }
+  .solution-card--featured { grid-column: span 1; }
+}
