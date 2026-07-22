@@ -1,1 +1,21 @@
 /* Estilos centralizados en pagocel.css con ViewEncapsulation.None */
+
+.open-account__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    left: -20%;
+}
+
+.open-account__logo-icon {
+    height: clamp(120px, 8vw, 130px);
+    width: auto;
+    border-radius: 16px;
+    object-fit: contain;
+}
+
+.open-account__logo-text {
+    height: clamp(120px, 12vw, 130px);
+    width: auto;
+    object-fit: contain;
+}
