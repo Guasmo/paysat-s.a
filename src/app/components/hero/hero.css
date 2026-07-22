@@ -6,7 +6,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  min-height: clamp(560px, 80vh, 900px);
+  min-height: calc(100dvh - 80px);
   align-items: center;
 }
 
