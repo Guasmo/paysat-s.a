@@ -70,7 +70,7 @@
   background-position: center;
   border-radius: 18px;
   padding: 6rem 2rem 2rem 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--pgc-amber);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
@@ -90,19 +90,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 20, 35, 0.95) 0%, rgba(10, 20, 35, 0.75) 40%, rgba(10, 20, 35, 0) 80%);
+  background: linear-gradient(to top, rgba(10, 20, 35, 0.95) 0%, rgba(10, 20, 35, 0.75) 30%, rgba(10, 20, 35, 0) 55%);
   z-index: 1;
   border-radius: inherit;
 }
 
-.solution-card > * {
+.solution-card>* {
   position: relative;
   z-index: 2;
 }
 
 .solution-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(245, 158, 11, 0.55);
+  border-color: var(--pgc-amber-hover);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.3),
     0 0 0 1px var(--pgc-amber-border),
@@ -116,7 +116,9 @@
 }
 
 /* Featured card — 2 columnas */
-.solution-card--featured { grid-column: span 2; }
+.solution-card--featured {
+  grid-column: span 2;
+}
 
 /* Card icon */
 .card-icon {
@@ -134,7 +136,10 @@
   transition: border-color 300ms ease, background 300ms ease, color 300ms ease;
 }
 
-.card-icon svg { width: 24px; height: 24px; }
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+}
 
 /* Card text */
 .solution-card h3 {
@@ -228,15 +233,29 @@
   transform: translateX(3px);
 }
 
-.btn-conocer-mas svg { width: 16px; height: 16px; }
+.btn-conocer-mas svg {
+  width: 16px;
+  height: 16px;
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .solutions-grid         { grid-template-columns: repeat(2, 1fr); }
-  .solution-card--featured { grid-column: span 2; }
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .solution-card--featured {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 600px) {
-  .solutions-grid          { grid-template-columns: 1fr; gap: 1rem; }
-  .solution-card--featured { grid-column: span 1; }
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .solution-card--featured {
+    grid-column: span 1;
+  }
 }

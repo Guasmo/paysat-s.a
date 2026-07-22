@@ -6,7 +6,7 @@ import { SolGrid } from './sections/sol-grid/sol-grid';
 @Component({
   selector: 'app-services',
   imports: [Contact, SolHero, SolGrid],
-  templateUrl: './services.html',
-  styleUrl: './services.css',
+  templateUrl: './solutions.html',
+  styleUrl: './solutions.css',
 })
-export class Services { }
+export class Solutions { }

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
-import { Services } from './pages/services/services';
 import { Help } from './pages/help/help';
 
 import { AbreTuCuenta } from './pages/abre-tu-cuenta/abre-tu-cuenta';
@@ -10,10 +9,11 @@ import { Pagocel } from './pages/pagocel/pagocel';
 import { ProcesoImplementacion } from './pages/proceso-implementacion/proceso-implementacion';
 import { Seguridad } from './pages/seguridad/seguridad';
 import { Recursos } from './pages/recursos/recursos';
+import { Solutions } from './pages/solutions/solutions';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'soluciones', component: Services },
+  { path: 'soluciones', component: Solutions },
   { path: 'nosotros', component: Nosotros },
   { path: 'pagocel', component: Pagocel },
   { path: 'proceso-implementacion', component: ProcesoImplementacion },
