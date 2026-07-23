@@ -25,11 +25,15 @@ export class PgcHero implements AfterViewInit, OnDestroy {
         { opacity: 1, scale: 1, duration: 1, ease: 'elastic.out(1, 0.55)', stagger: 0.15, delay: 0.3 }
       );
 
-      // Texto y teléfono del hero
+      // Texto, logo y teléfono del hero
+      const heroLogo = this.el.nativeElement.querySelector('.open-account__logo');
       const heroText = this.el.nativeElement.querySelector('.pgc-hero-text');
       const heroPhone = this.el.nativeElement.querySelector('.pgc-hero-visual');
       const heroBadges = this.el.nativeElement.querySelectorAll('.pgc-phone-badge');
 
+      if (heroLogo) {
+        gsap.fromTo(heroLogo, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'back.out(1.4)', delay: 0.05 });
+      }
       gsap.fromTo(heroText, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: 'back.out(1.4)', delay: 0.1 });
       gsap.fromTo(heroPhone, { opacity: 0, y: 50, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'back.out(1.5)', delay: 0.2 });
       if (heroBadges.length) {

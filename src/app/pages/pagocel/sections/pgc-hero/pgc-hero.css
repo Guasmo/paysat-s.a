@@ -3,19 +3,19 @@
 .open-account__logo {
     display: flex;
     align-items: center;
-    margin-bottom: 2.5rem;
-    left: -20%;
+    gap: 0.5rem;
+    opacity: 0; /* animado por GSAP */
 }
 
 .open-account__logo-icon {
-    height: clamp(120px, 8vw, 130px);
+    height: clamp(55px, 6vw, 80px);
     width: auto;
-    border-radius: 16px;
+    border-radius: 12px;
     object-fit: contain;
 }
 
 .open-account__logo-text {
-    height: clamp(120px, 12vw, 130px);
+    height: clamp(55px, 8vw, 80px);
     width: auto;
     object-fit: contain;
 }

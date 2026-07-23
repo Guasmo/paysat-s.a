@@ -75,12 +75,20 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  gap: 8rem;
+  grid-template-areas:
+    "logo visual"
+    "text visual";
+  gap: 1rem 8rem;
   align-items: center;
+}
+
+.open-account__logo {
+  grid-area: logo;
 }
 
 /* ── Hero Left Text ── */
 .pgc-hero-text {
+  grid-area: text;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -131,6 +139,7 @@
 
 /* ── Hero Right Visual (Phone) ── */
 .pgc-hero-visual {
+  grid-area: visual;
   position: relative;
   display: flex;
   justify-content: center;
@@ -1030,13 +1039,43 @@
   }
 
   .pgc-hero-inner {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
     justify-items: center;
-    gap: 4rem;
+    gap: 2rem;
+  }
+
+  .open-account__logo {
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .open-account__logo-icon {
+    height: clamp(40px, 9vw, 60px);
+  }
+
+  .open-account__logo-text {
+    height: clamp(40px, 11vw, 60px);
+  }
+
+  .pgc-hero-visual {
+    order: 2;
+    position: relative;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .pgc-hero-text {
+    order: 3;
     align-items: center;
   }
 
@@ -1045,41 +1084,31 @@
     justify-content: center;
   }
 
-  .pgc-hero-visual {
-    order: -1;
-  }
-
-  /* Telefono: se achica y se endereza (el tilt 3D se ve raro/desalineado en
-     pantallas angostas) */
+  /* Telefono: se achica y se endereza */
   .pgc-phone-shell {
     transform: none;
   }
 
   .pgc-hero-phone {
-    width: clamp(190px, 58vw, 250px);
+    width: clamp(180px, 54vw, 220px);
   }
 
-  /* Cards del hero: ahora arriba/abajo del telefono (no a los lados), pegadas
-     por su borde horizontal al borde real del telefono en este breakpoint.
-     El offset horizontal usa la MISMA formula que el ancho de .pgc-hero-phone
-     (clamp(190px,58vw,250px)/2 + 6px del padding del shell), asi el borde de
-     la card siempre coincide con el borde del telefono en cualquier viewport
-     dentro de este rango. */
+  /* Cards del hero: posicionadas en las esquinas superiores/inferiores sin salirse */
   .pgc-connected-card--left {
-    left: calc(10% - (clamp(190px, 58vw, 250px) / 2) - 6px);
+    left: 0;
     right: auto;
-    bottom: 80%;
-    top: -5%;
-    margin-bottom: 14px;
+    top: -10px;
+    bottom: auto;
+    margin-bottom: 0;
     transform: none;
   }
 
   .pgc-connected-card--right {
-    right: calc(5% - (clamp(190px, 58vw, 250px) / 2) - 6px);
+    right: 0;
     left: auto;
-    top: 80%;
-    bottom: auto;
-    margin-top: 14px;
+    bottom: -10px;
+    top: auto;
+    margin-top: 0;
     transform: none;
   }
 
@@ -1274,25 +1303,37 @@
     padding: 5rem 1.25rem;
   }
 
+  .open-account__logo-icon {
+    height: clamp(35px, 8vw, 45px);
+  }
+
+  .open-account__logo-text {
+    height: clamp(35px, 10vw, 45px);
+  }
+
+  .pgc-hero-visual {
+    max-width: 290px;
+  }
+
   .pgc-hero-phone {
-    width: clamp(170px, 56vw, 210px);
+    width: clamp(160px, 50vw, 190px);
   }
 
   .pgc-connected-card--left {
-    left: calc(30% - (clamp(170px, 56vw, 210px) / 2) - 6px);
+    left: -4px;
     right: auto;
-    bottom: 100%;
-    top: 0;
-    margin-bottom: 10px;
+    top: -8px;
+    bottom: auto;
+    margin-bottom: 0;
     transform: none;
   }
 
   .pgc-connected-card--right {
-    right: calc(25% - (clamp(170px, 56vw, 210px) / 2) - 6px);
+    right: -4px;
     left: auto;
-    top: 100%;
-    bottom: 5%;
-    margin-top: 10px;
+    bottom: -8px;
+    top: auto;
+    margin-top: 0;
     transform: none;
   }
 
