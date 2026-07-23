@@ -8,7 +8,7 @@
     <div class="nav-divider"></div>
 
     <a (click)="scrollToIntegration($event)"
-      [class.active]="isHomePage() && activeSection() === 'integracion'">Integracion</a>
+      [class.active]="isHomePage() && activeSection() === 'integracion'">Integración</a>
     <a (click)="scrollToBenefits($event)"
       [class.active]="isHomePage() && activeSection() === 'beneficios'">Instituciones Financieras</a>
     <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
@@ -42,7 +42,7 @@
   <app-main-button />
 
   <div class="burger-menu" (click)="toggleMenu()" role="button" tabindex="0" aria-label="Abrir menú">
-    <img src="burger-menu-svgrepo-com.svg" alt="">
+    <img src="/icons/burger-menu-svgrepo-com.svg" alt="">
   </div>
 </header>
 
@@ -57,7 +57,7 @@
   <nav class="menu-nav">
     <a routerLink="/" (click)="closeMenu()" [class.active]="isHomePage() && activeSection() === 'inicio'">Inicio</a>
     <a (click)="scrollToIntegration($event); closeMenu()"
-      [class.active]="isHomePage() && activeSection() === 'integracion'">Integracion</a>
+      [class.active]="isHomePage() && activeSection() === 'integracion'">Integración</a>
     <a (click)="scrollToBenefits($event); closeMenu()"
       [class.active]="isHomePage() && activeSection() === 'beneficios'">Instituciones Financieras</a>
     <a routerLink="/nosotros" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
