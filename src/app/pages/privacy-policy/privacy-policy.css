@@ -64,7 +64,8 @@
 
 .privacy-content section {
   margin-bottom: 3.5rem;
-  scroll-margin-top: 100px; /* Gives space when anchoring */
+  scroll-margin-top: 100px;
+  /* Gives space when anchoring */
 }
 
 .privacy-content h2 {
@@ -94,7 +95,7 @@
   font-weight: 600;
 }
 
-.privacy-content p, 
+.privacy-content p,
 .privacy-content li {
   font-size: 1.05rem;
   color: var(--color-text-main, #334155);
@@ -141,7 +142,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .privacy-sidebar {
     display: none;
   }
@@ -153,7 +154,7 @@
     padding: 0;
     border-radius: 0;
   }
-  
+
   .privacy-content h1 {
     font-size: 2rem;
   }
@@ -163,9 +164,11 @@
   .privacy-content h1 {
     font-size: 1.75rem;
   }
+
   .privacy-content h2 {
     font-size: 1.45rem;
   }
+
   .privacy-content h3 {
     font-size: 1.25rem;
   }
