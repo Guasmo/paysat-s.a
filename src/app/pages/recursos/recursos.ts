@@ -19,8 +19,8 @@ export class Recursos {
   faqs: FaqItem[] = [
     {
       id: 1,
-      question: '¿Qué es PAYSAT?',
-      answer: 'PAYSAT Money S.A. es una empresa de tecnología financiera que ofrece infraestructura tecnológica para instituciones financieras. No somos un banco; prestamos servicios tecnológicos como integración bancaria, pagos móviles, wallets digitales, KYC, AML y monitoreo de fraude.',
+      question: '¿Qué es PAYSAT MONEY S.A?',
+      answer: 'PAYSAT MONEY S.A. es una empresa de tecnología financiera que ofrece infraestructura tecnológica para instituciones financieras. No somos un banco; prestamos servicios tecnológicos como integración bancaria, pagos móviles, wallets digitales, KYC, AML y monitoreo de fraude.',
       open: false,
       height: 0,
     },
@@ -55,7 +55,7 @@ export class Recursos {
     {
       id: 6,
       question: '¿PAYSAT emite tarjetas de débito?',
-      answer: 'PAYSAT提供 tecnología para emisión y gestión de tarjetas de débito y crédito bajo tu marca, con soporte para chip EMV y pagos sin contacto. La emisión real la realiza la institución financiera regulada.',
+      answer: 'PAYSAT ofrece tecnología para emisión y gestión de tarjetas de débito y crédito bajo tu marca, con soporte para chip EMV y pagos sin contacto. La emisión real la realiza la institución financiera regulada.',
       open: false,
       height: 0,
     },
@@ -83,7 +83,7 @@ export class Recursos {
     {
       id: 10,
       question: '¿PAYSAT es un banco?',
-      answer: 'No. PAYSAT Money S.A. es una empresa de tecnología financiera que presta servicios tecnológicos. No recibe depósitos, no otorga créditos y no realiza intermediación financiera directa. Todas las operaciones financieras son procesadas por la institución regulada correspondiente.',
+      answer: 'No. PAYSAT MONEY S.A. es una empresa de tecnología financiera que presta servicios tecnológicos. No recibe depósitos, no otorga créditos y no realiza intermediación financiera directa. Todas las operaciones financieras son procesadas por la institución regulada correspondiente.',
       open: false,
       height: 0,
     },
