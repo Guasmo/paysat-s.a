@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 2rem 4rem;
+  padding: 4.5rem 2rem 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -1034,7 +1034,7 @@
 
 @media (max-width: 900px) {
   .pgc-hero {
-    padding: 5rem 1.5rem 3rem;
+    padding: 3.5rem 1.5rem 2.5rem;
     min-height: auto;
   }
 
@@ -1044,7 +1044,7 @@
     text-align: center;
     align-items: center;
     justify-items: center;
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .open-account__logo {
@@ -1052,15 +1052,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -6px;
     margin-bottom: 0;
   }
 
   .open-account__logo-icon {
-    height: clamp(40px, 9vw, 60px);
+    height: clamp(55px, 11vw, 75px);
   }
 
   .open-account__logo-text {
-    height: clamp(40px, 11vw, 60px);
+    height: clamp(55px, 13vw, 75px);
   }
 
   .pgc-hero-visual {
@@ -1290,6 +1291,14 @@
 
 @media (max-width: 600px) {
 
+  .pgc-hero {
+    padding: 2.8rem 1.25rem 2rem;
+  }
+
+  .open-account__logo {
+    margin-top: -10px;
+  }
+
   .pgc-timeline::before,
   .pgc-tl-node {
     display: none;
@@ -1304,11 +1313,11 @@
   }
 
   .open-account__logo-icon {
-    height: clamp(35px, 8vw, 45px);
+    height: clamp(46px, 11vw, 60px);
   }
 
   .open-account__logo-text {
-    height: clamp(35px, 10vw, 45px);
+    height: clamp(46px, 13vw, 60px);
   }
 
   .pgc-hero-visual {

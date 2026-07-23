@@ -8,14 +8,14 @@
 }
 
 .open-account__logo-icon {
-    height: clamp(55px, 6vw, 80px);
+    height: clamp(70px, 7vw, 100px);
     width: auto;
-    border-radius: 12px;
+    border-radius: 14px;
     object-fit: contain;
 }
 
 .open-account__logo-text {
-    height: clamp(55px, 8vw, 80px);
+    height: clamp(70px, 9vw, 100px);
     width: auto;
     object-fit: contain;
 }
