@@ -38,5 +38,10 @@
     "tailwindcss": "^4.1.12",
     "typescript": "~6.0.2",
     "vitest": "^4.0.8"
+  },
+  "overrides": {
+    "@babel/core": "^7.29.1",
+    "@hono/node-server": "^2.0.5",
+    "esbuild": "^0.28.1"
   }
 }
